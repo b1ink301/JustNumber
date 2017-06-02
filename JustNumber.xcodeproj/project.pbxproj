@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20250D081EDBB6C6002CEF0C /* JNCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20250D071EDBB6C6002CEF0C /* JNCall.swift */; };
+		20250D0A1EDBB7DF002CEF0C /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20250D091EDBB7DF002CEF0C /* Array+Extension.swift */; };
+		20250D0C1EDBB89B002CEF0C /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20250D0B1EDBB89B002CEF0C /* URL+Extension.swift */; };
+		20250D0E1EDBB8DB002CEF0C /* StartCallConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20250D0D1EDBB8DB002CEF0C /* StartCallConvertible.swift */; };
+		20250D101EDBBE04002CEF0C /* NSUserActivity+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20250D0F1EDBBE04002CEF0C /* NSUserActivity+Extension.swift */; };
+		20250D181EDBBFBB002CEF0C /* CallDirectoryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20250D171EDBBFBB002CEF0C /* CallDirectoryHandler.swift */; };
+		20250D1C1EDBBFBB002CEF0C /* IntentsExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 20250D151EDBBFBA002CEF0C /* IntentsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2085E9DE1ED3F7F90067D65D /* CKModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2085E9DC1ED3F7F90067D65D /* CKModel.xcdatamodeld */; };
+		2085EA591ED3FFE00067D65D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2085EA581ED3FFE00067D65D /* CoreDataManager.swift */; };
+		20A4F0E61EE136CB0021A4C2 /* CallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20250D051EDBB624002CEF0C /* CallManager.swift */; };
 		20B12E931ED2CE2600521CD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B12E921ED2CE2600521CD2 /* AppDelegate.swift */; };
 		20B12E951ED2CE2600521CD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B12E941ED2CE2600521CD2 /* ViewController.swift */; };
 		20B12E981ED2CE2600521CD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B12E961ED2CE2600521CD2 /* Main.storyboard */; };
@@ -14,9 +24,18 @@
 		20B12E9D1ED2CE2600521CD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B12E9B1ED2CE2600521CD2 /* LaunchScreen.storyboard */; };
 		20B12EA81ED2CE2700521CD2 /* JustNumberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B12EA71ED2CE2700521CD2 /* JustNumberTests.swift */; };
 		20B12EB31ED2CE2700521CD2 /* JustNumberUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B12EB21ED2CE2700521CD2 /* JustNumberUITests.swift */; };
+		20B12EC11ED3CED600521CD2 /* ProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B12EC01ED3CED600521CD2 /* ProviderDelegate.swift */; };
+		20B12EC31ED3D19100521CD2 /* CKTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B12EC21ED3D19100521CD2 /* CKTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		20250D1A1EDBBFBB002CEF0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 20B12E871ED2CE2600521CD2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 20250D141EDBBFBA002CEF0C;
+			remoteInfo = IntentsExtension;
+		};
 		20B12EA41ED2CE2700521CD2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 20B12E871ED2CE2600521CD2 /* Project object */;
@@ -33,7 +52,33 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2079C8191ED5326C00FCDB6A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				20250D1C1EDBBFBB002CEF0C /* IntentsExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		20250D051EDBB624002CEF0C /* CallManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallManager.swift; sourceTree = "<group>"; };
+		20250D071EDBB6C6002CEF0C /* JNCall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JNCall.swift; sourceTree = "<group>"; };
+		20250D091EDBB7DF002CEF0C /* Array+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		20250D0B1EDBB89B002CEF0C /* URL+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
+		20250D0D1EDBB8DB002CEF0C /* StartCallConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartCallConvertible.swift; sourceTree = "<group>"; };
+		20250D0F1EDBBE04002CEF0C /* NSUserActivity+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSUserActivity+Extension.swift"; sourceTree = "<group>"; };
+		20250D151EDBBFBA002CEF0C /* IntentsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = IntentsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		20250D171EDBBFBB002CEF0C /* CallDirectoryHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDirectoryHandler.swift; sourceTree = "<group>"; };
+		20250D191EDBBFBB002CEF0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2085E9DD1ED3F7F90067D65D /* CKModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CKModel.xcdatamodel; sourceTree = "<group>"; };
+		2085EA581ED3FFE00067D65D /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		2085EA5F1ED40F950067D65D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		20B12E8F1ED2CE2600521CD2 /* JustNumber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustNumber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20B12E921ED2CE2600521CD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20B12E941ED2CE2600521CD2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,9 +92,18 @@
 		20B12EAE1ED2CE2700521CD2 /* JustNumberUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JustNumberUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		20B12EB21ED2CE2700521CD2 /* JustNumberUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustNumberUITests.swift; sourceTree = "<group>"; };
 		20B12EB41ED2CE2700521CD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20B12EC01ED3CED600521CD2 /* ProviderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderDelegate.swift; sourceTree = "<group>"; };
+		20B12EC21ED3D19100521CD2 /* CKTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		20250D121EDBBFBA002CEF0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		20B12E8C1ED2CE2600521CD2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -74,13 +128,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		20250D161EDBBFBB002CEF0C /* IntentsExtension */ = {
+			isa = PBXGroup;
+			children = (
+				20250D171EDBBFBB002CEF0C /* CallDirectoryHandler.swift */,
+				20250D191EDBBFBB002CEF0C /* Info.plist */,
+			);
+			path = IntentsExtension;
+			sourceTree = "<group>";
+		};
+		2085EA5E1ED40F950067D65D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2085EA5F1ED40F950067D65D /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		20B12E861ED2CE2600521CD2 = {
 			isa = PBXGroup;
 			children = (
 				20B12E911ED2CE2600521CD2 /* JustNumber */,
 				20B12EA61ED2CE2700521CD2 /* JustNumberTests */,
 				20B12EB11ED2CE2700521CD2 /* JustNumberUITests */,
+				20250D161EDBBFBB002CEF0C /* IntentsExtension */,
 				20B12E901ED2CE2600521CD2 /* Products */,
+				2085EA5E1ED40F950067D65D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,6 +163,7 @@
 				20B12E8F1ED2CE2600521CD2 /* JustNumber.app */,
 				20B12EA31ED2CE2700521CD2 /* JustNumberTests.xctest */,
 				20B12EAE1ED2CE2700521CD2 /* JustNumberUITests.xctest */,
+				20250D151EDBBFBA002CEF0C /* IntentsExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,6 +177,16 @@
 				20B12E991ED2CE2600521CD2 /* Assets.xcassets */,
 				20B12E9B1ED2CE2600521CD2 /* LaunchScreen.storyboard */,
 				20B12E9E1ED2CE2600521CD2 /* Info.plist */,
+				20B12EC01ED3CED600521CD2 /* ProviderDelegate.swift */,
+				20B12EC21ED3D19100521CD2 /* CKTableViewController.swift */,
+				2085E9DC1ED3F7F90067D65D /* CKModel.xcdatamodeld */,
+				2085EA581ED3FFE00067D65D /* CoreDataManager.swift */,
+				20250D051EDBB624002CEF0C /* CallManager.swift */,
+				20250D071EDBB6C6002CEF0C /* JNCall.swift */,
+				20250D091EDBB7DF002CEF0C /* Array+Extension.swift */,
+				20250D0B1EDBB89B002CEF0C /* URL+Extension.swift */,
+				20250D0D1EDBB8DB002CEF0C /* StartCallConvertible.swift */,
+				20250D0F1EDBBE04002CEF0C /* NSUserActivity+Extension.swift */,
 			);
 			path = JustNumber;
 			sourceTree = "<group>";
@@ -128,6 +212,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		20250D141EDBBFBA002CEF0C /* IntentsExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20250D1D1EDBBFBB002CEF0C /* Build configuration list for PBXNativeTarget "IntentsExtension" */;
+			buildPhases = (
+				20250D111EDBBFBA002CEF0C /* Sources */,
+				20250D121EDBBFBA002CEF0C /* Frameworks */,
+				20250D131EDBBFBA002CEF0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IntentsExtension;
+			productName = IntentsExtension;
+			productReference = 20250D151EDBBFBA002CEF0C /* IntentsExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		20B12E8E1ED2CE2600521CD2 /* JustNumber */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 20B12EB71ED2CE2700521CD2 /* Build configuration list for PBXNativeTarget "JustNumber" */;
@@ -135,10 +236,12 @@
 				20B12E8B1ED2CE2600521CD2 /* Sources */,
 				20B12E8C1ED2CE2600521CD2 /* Frameworks */,
 				20B12E8D1ED2CE2600521CD2 /* Resources */,
+				2079C8191ED5326C00FCDB6A /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				20250D1B1EDBBFBB002CEF0C /* PBXTargetDependency */,
 			);
 			name = JustNumber;
 			productName = JustNumber;
@@ -191,18 +294,29 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = evan;
 				TargetAttributes = {
+					20250D141EDBBFBA002CEF0C = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = WB4K6375G3;
+						ProvisioningStyle = Automatic;
+					};
 					20B12E8E1ED2CE2600521CD2 = {
 						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = WB4K6375G3;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					20B12EA21ED2CE2700521CD2 = {
 						CreatedOnToolsVersion = 8.3;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						TestTargetID = 20B12E8E1ED2CE2600521CD2;
 					};
 					20B12EAD1ED2CE2700521CD2 = {
 						CreatedOnToolsVersion = 8.3;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						TestTargetID = 20B12E8E1ED2CE2600521CD2;
 					};
 				};
@@ -223,11 +337,19 @@
 				20B12E8E1ED2CE2600521CD2 /* JustNumber */,
 				20B12EA21ED2CE2700521CD2 /* JustNumberTests */,
 				20B12EAD1ED2CE2700521CD2 /* JustNumberUITests */,
+				20250D141EDBBFBA002CEF0C /* IntentsExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		20250D131EDBBFBA002CEF0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		20B12E8D1ED2CE2600521CD2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -255,12 +377,30 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		20250D111EDBBFBA002CEF0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20250D181EDBBFBB002CEF0C /* CallDirectoryHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		20B12E8B1ED2CE2600521CD2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2085EA591ED3FFE00067D65D /* CoreDataManager.swift in Sources */,
+				2085E9DE1ED3F7F90067D65D /* CKModel.xcdatamodeld in Sources */,
+				20B12EC11ED3CED600521CD2 /* ProviderDelegate.swift in Sources */,
+				20A4F0E61EE136CB0021A4C2 /* CallManager.swift in Sources */,
+				20250D0C1EDBB89B002CEF0C /* URL+Extension.swift in Sources */,
+				20250D0E1EDBB8DB002CEF0C /* StartCallConvertible.swift in Sources */,
+				20250D081EDBB6C6002CEF0C /* JNCall.swift in Sources */,
+				20250D101EDBBE04002CEF0C /* NSUserActivity+Extension.swift in Sources */,
 				20B12E951ED2CE2600521CD2 /* ViewController.swift in Sources */,
 				20B12E931ED2CE2600521CD2 /* AppDelegate.swift in Sources */,
+				20B12EC31ED3D19100521CD2 /* CKTableViewController.swift in Sources */,
+				20250D0A1EDBB7DF002CEF0C /* Array+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +423,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		20250D1B1EDBBFBB002CEF0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 20250D141EDBBFBA002CEF0C /* IntentsExtension */;
+			targetProxy = 20250D1A1EDBBFBB002CEF0C /* PBXContainerItemProxy */;
+		};
 		20B12EA51ED2CE2700521CD2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 20B12E8E1ED2CE2600521CD2 /* JustNumber */;
@@ -315,6 +460,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		20250D1E1EDBBFBB002CEF0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = WB4K6375G3;
+				INFOPLIST_FILE = IntentsExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.b1ink.JustNumber.IntentsExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		20250D1F1EDBBFBB002CEF0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = WB4K6375G3;
+				INFOPLIST_FILE = IntentsExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = net.b1ink.JustNumber.IntentsExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		20B12EB51ED2CE2700521CD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -356,7 +533,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -401,7 +578,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -413,11 +590,16 @@
 		20B12EB81ED2CE2700521CD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = WB4K6375G3;
 				INFOPLIST_FILE = JustNumber/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.b1ink.JustNumber;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -425,11 +607,16 @@
 		20B12EB91ED2CE2700521CD2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = WB4K6375G3;
 				INFOPLIST_FILE = JustNumber/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.b1ink.JustNumber;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -439,10 +626,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = JustNumberTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.b1ink.JustNumberTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JustNumber.app/JustNumber";
 			};
@@ -453,10 +642,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = JustNumberTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.b1ink.JustNumberTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JustNumber.app/JustNumber";
 			};
@@ -466,10 +657,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = JustNumberUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.b1ink.JustNumberUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = JustNumber;
 			};
@@ -479,10 +672,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = JustNumberUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = net.b1ink.JustNumberUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = JustNumber;
 			};
@@ -491,6 +686,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		20250D1D1EDBBFBB002CEF0C /* Build configuration list for PBXNativeTarget "IntentsExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20250D1E1EDBBFBB002CEF0C /* Debug */,
+				20250D1F1EDBBFBB002CEF0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		20B12E8A1ED2CE2600521CD2 /* Build configuration list for PBXProject "JustNumber" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -507,6 +711,7 @@
 				20B12EB91ED2CE2700521CD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		20B12EBA1ED2CE2700521CD2 /* Build configuration list for PBXNativeTarget "JustNumberTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +720,7 @@
 				20B12EBC1ED2CE2700521CD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		20B12EBD1ED2CE2700521CD2 /* Build configuration list for PBXNativeTarget "JustNumberUITests" */ = {
 			isa = XCConfigurationList;
@@ -523,8 +729,22 @@
 				20B12EBF1ED2CE2700521CD2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2085E9DC1ED3F7F90067D65D /* CKModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2085E9DD1ED3F7F90067D65D /* CKModel.xcdatamodel */,
+			);
+			currentVersion = 2085E9DD1ED3F7F90067D65D /* CKModel.xcdatamodel */;
+			path = CKModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 20B12E871ED2CE2600521CD2 /* Project object */;
 }
