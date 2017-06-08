@@ -67,8 +67,12 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "2">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "0"
+         BundleIdentifier = "com.accommate.100bangTest"
+         RemotePath = "/var/containers/Bundle/Application/6873D61E-AECF-412E-8D5B-37A81E4220E0/JustNumber.app">
+      </RemoteRunnable>
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "20B12E8E1ED2CE2600521CD2"
@@ -76,7 +80,7 @@
             BlueprintName = "JustNumber"
             ReferencedContainer = "container:JustNumber.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>

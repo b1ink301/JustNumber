@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="12141" systemVersion="16F73" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Data" representedClassName="CKItem" syncable="YES" codeGenerationType="class">
+        <attribute name="display" optional="YES" attributeType="String" minValueString="2" maxValueString="32" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" minValueString="2" maxValueString="64" syncable="YES"/>
-        <attribute name="phone" optional="YES" attributeType="String" minValueString="2" maxValueString="32" syncable="YES"/>
+        <attribute name="number" optional="YES" attributeType="Integer 64" minValueString="0" defaultValueString="0" usesScalarValueType="YES" indexed="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Data" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="Data" positionX="-63" positionY="-18" width="128" height="90"/>
     </elements>
 </model>

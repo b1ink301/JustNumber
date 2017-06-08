@@ -6,11 +6,9 @@
 //  Copyright © 2017년 evan. All rights reserved.
 //
 
-import Foundation
-import UIKit
 import CallKit
 
-final class ProviderDelegate: NSObject {
+class ProviderDelegate: NSObject {
     // 1.
     fileprivate let callManager: CallManager
     fileprivate let provider: CXProvider
@@ -34,7 +32,7 @@ final class ProviderDelegate: NSObject {
         let localizedName = NSLocalizedString("JustNumber", comment: "justNumber")
         let providerConfiguration = CXProviderConfiguration(localizedName: localizedName)
         
-        providerConfiguration.supportsVideo = false
+        providerConfiguration.supportsVideo = true
         providerConfiguration.maximumCallsPerCallGroup = 1
         providerConfiguration.supportedHandleTypes = [.phoneNumber]
         
