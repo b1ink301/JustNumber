@@ -11,28 +11,42 @@ import UIKit
 class CKTableViewController: UITableViewController {
     
     private let imageCellIdentifier = "textCell"
-    var callManager: CallManager!
     
-//    var items: [CKItem] = [] {
-//        didSet {
-//            tableView.reloadData()
-//        }
-//    }
+    var items: [CKItem] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        callManager = AppDelegate.shared.callManager
-        
-        callManager.callsChangedHandler = { [weak self] in
-            guard let strongSelf = self else { return }
-            strongSelf.tableView.reloadData()
-        }
+        reloadData()
     }
     
-//    func reloadData(){
-//        items = CoreDataManager.sharedInstance.getItems()
-//    }
+    func reloadData(){
+        NSLog("CKTableViewController:reloadData")
+        
+        let context = Storage.shared.context
+        
+        context.perform { 
+            do {
+                self.items = try context.fetch(CKItem.fetchRequest())
+                
+                AppDelegate.shared.reloadExtension(completionHandler: { (error) -> Void in
+                    if let error = error {
+                        NSLog(error.localizedDescription)
+                    }
+                    else{
+                        NSLog("Successed fetching data from CoreData")
+                    }
+                })
+            } catch {
+                NSLog("Error fetching data from CoreData")
+            }
+
+        }
+    }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell  {
         let cell = tableView.dequeueReusableCell(withIdentifier: imageCellIdentifier, for: indexPath)
@@ -40,10 +54,11 @@ class CKTableViewController: UITableViewController {
         let nameView = cell.viewWithTag(1) as! UILabel
         let phoneView = cell.viewWithTag(2) as! UILabel
         
-        let call = callManager.calls[indexPath.row]
+//        let call = callManager.calls[indexPath.row]
+        let call = items[indexPath.row]
         
-        nameView.text = call.handle
-        phoneView.text = call.uuid.uuidString
+        nameView.text = call.name
+        phoneView.text = String.init(call.number)
         
         return cell
     }
@@ -58,12 +73,12 @@ class CKTableViewController: UITableViewController {
 //        return tableView.bounds.size.width
 //    }
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        let call = callManager.calls[indexPath.row]
-        callManager.end(call: call)
+//        let call = callManager.calls[indexPath.row]
+//        callManager.end(call: call)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return callManager.calls.count
+        return items.count
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -82,7 +97,6 @@ class CKTableViewController: UITableViewController {
 }
 
 class CKTableViewCell: UITableViewCell {
-//    var nameLabel : UILabel!
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var phone: UILabel!
 

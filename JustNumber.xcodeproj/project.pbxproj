@@ -15,8 +15,8 @@
 		20250D181EDBBFBB002CEF0C /* CallDirectoryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20250D171EDBBFBB002CEF0C /* CallDirectoryHandler.swift */; };
 		20250D1C1EDBBFBB002CEF0C /* IntentsExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 20250D151EDBBFBA002CEF0C /* IntentsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2085E9DE1ED3F7F90067D65D /* CKModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2085E9DC1ED3F7F90067D65D /* CKModel.xcdatamodeld */; };
-		2085EA591ED3FFE00067D65D /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2085EA581ED3FFE00067D65D /* CoreDataManager.swift */; };
 		20A4F0E61EE136CB0021A4C2 /* CallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20250D051EDBB624002CEF0C /* CallManager.swift */; };
+		20A4F0EC1EE15FC00021A4C2 /* CKModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2085E9DC1ED3F7F90067D65D /* CKModel.xcdatamodeld */; };
 		20B12E931ED2CE2600521CD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B12E921ED2CE2600521CD2 /* AppDelegate.swift */; };
 		20B12E951ED2CE2600521CD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B12E941ED2CE2600521CD2 /* ViewController.swift */; };
 		20B12E981ED2CE2600521CD2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B12E961ED2CE2600521CD2 /* Main.storyboard */; };
@@ -26,6 +26,10 @@
 		20B12EB31ED2CE2700521CD2 /* JustNumberUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B12EB21ED2CE2700521CD2 /* JustNumberUITests.swift */; };
 		20B12EC11ED3CED600521CD2 /* ProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B12EC01ED3CED600521CD2 /* ProviderDelegate.swift */; };
 		20B12EC31ED3D19100521CD2 /* CKTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B12EC21ED3D19100521CD2 /* CKTableViewController.swift */; };
+		20CD5DD61EE8FB6500AB48B4 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CEF7D01EE7F431009B5685 /* Storage.swift */; };
+		20CD5DD71EE9106C00AB48B4 /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FD71041EE7FC4B009B1818 /* PersistentContainer.swift */; };
+		20CEF7D11EE7F431009B5685 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CEF7D01EE7F431009B5685 /* Storage.swift */; };
+		20FD71051EE7FC4B009B1818 /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FD71041EE7FC4B009B1818 /* PersistentContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,8 +81,8 @@
 		20250D171EDBBFBB002CEF0C /* CallDirectoryHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDirectoryHandler.swift; sourceTree = "<group>"; };
 		20250D191EDBBFBB002CEF0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2085E9DD1ED3F7F90067D65D /* CKModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CKModel.xcdatamodel; sourceTree = "<group>"; };
-		2085EA581ED3FFE00067D65D /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		2085EA5F1ED40F950067D65D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		20A4F0E71EE13B9F0021A4C2 /* JustNumber.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JustNumber.entitlements; sourceTree = "<group>"; };
 		20B12E8F1ED2CE2600521CD2 /* JustNumber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustNumber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20B12E921ED2CE2600521CD2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20B12E941ED2CE2600521CD2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -94,6 +98,9 @@
 		20B12EB41ED2CE2700521CD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20B12EC01ED3CED600521CD2 /* ProviderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderDelegate.swift; sourceTree = "<group>"; };
 		20B12EC21ED3D19100521CD2 /* CKTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKTableViewController.swift; sourceTree = "<group>"; };
+		20CEF7C91EE7822A009B5685 /* IntentsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IntentsExtension.entitlements; sourceTree = "<group>"; };
+		20CEF7D01EE7F431009B5685 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		20FD71041EE7FC4B009B1818 /* PersistentContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistentContainer.swift; path = JustNumber/PersistentContainer.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,8 +138,11 @@
 		20250D161EDBBFBB002CEF0C /* IntentsExtension */ = {
 			isa = PBXGroup;
 			children = (
+				20FD71041EE7FC4B009B1818 /* PersistentContainer.swift */,
+				20CEF7C91EE7822A009B5685 /* IntentsExtension.entitlements */,
 				20250D171EDBBFBB002CEF0C /* CallDirectoryHandler.swift */,
 				20250D191EDBBFBB002CEF0C /* Info.plist */,
+				20CEF7D01EE7F431009B5685 /* Storage.swift */,
 			);
 			path = IntentsExtension;
 			sourceTree = "<group>";
@@ -171,6 +181,7 @@
 		20B12E911ED2CE2600521CD2 /* JustNumber */ = {
 			isa = PBXGroup;
 			children = (
+				20A4F0E71EE13B9F0021A4C2 /* JustNumber.entitlements */,
 				20B12E921ED2CE2600521CD2 /* AppDelegate.swift */,
 				20B12E941ED2CE2600521CD2 /* ViewController.swift */,
 				20B12E961ED2CE2600521CD2 /* Main.storyboard */,
@@ -180,7 +191,6 @@
 				20B12EC01ED3CED600521CD2 /* ProviderDelegate.swift */,
 				20B12EC21ED3D19100521CD2 /* CKTableViewController.swift */,
 				2085E9DC1ED3F7F90067D65D /* CKModel.xcdatamodeld */,
-				2085EA581ED3FFE00067D65D /* CoreDataManager.swift */,
 				20250D051EDBB624002CEF0C /* CallManager.swift */,
 				20250D071EDBB6C6002CEF0C /* JNCall.swift */,
 				20250D091EDBB7DF002CEF0C /* Array+Extension.swift */,
@@ -298,14 +308,25 @@
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = WB4K6375G3;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					20B12E8E1ED2CE2600521CD2 = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = WB4K6375G3;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.BackgroundModes = {
 								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 0;
 							};
 						};
 					};
@@ -381,7 +402,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20FD71051EE7FC4B009B1818 /* PersistentContainer.swift in Sources */,
 				20250D181EDBBFBB002CEF0C /* CallDirectoryHandler.swift in Sources */,
+				20A4F0EC1EE15FC00021A4C2 /* CKModel.xcdatamodeld in Sources */,
+				20CEF7D11EE7F431009B5685 /* Storage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,12 +413,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2085EA591ED3FFE00067D65D /* CoreDataManager.swift in Sources */,
 				2085E9DE1ED3F7F90067D65D /* CKModel.xcdatamodeld in Sources */,
 				20B12EC11ED3CED600521CD2 /* ProviderDelegate.swift in Sources */,
 				20A4F0E61EE136CB0021A4C2 /* CallManager.swift in Sources */,
 				20250D0C1EDBB89B002CEF0C /* URL+Extension.swift in Sources */,
 				20250D0E1EDBB8DB002CEF0C /* StartCallConvertible.swift in Sources */,
+				20CD5DD61EE8FB6500AB48B4 /* Storage.swift in Sources */,
+				20CD5DD71EE9106C00AB48B4 /* PersistentContainer.swift in Sources */,
 				20250D081EDBB6C6002CEF0C /* JNCall.swift in Sources */,
 				20250D101EDBBE04002CEF0C /* NSUserActivity+Extension.swift in Sources */,
 				20B12E951ED2CE2600521CD2 /* ViewController.swift in Sources */,
@@ -464,11 +489,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_ENTITLEMENTS = IntentsExtension/IntentsExtension.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = WB4K6375G3;
 				INFOPLIST_FILE = IntentsExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.b1ink.JustNumber.IntentsExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.accommate.test.IntentsExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -480,11 +506,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_ENTITLEMENTS = IntentsExtension/IntentsExtension.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = WB4K6375G3;
 				INFOPLIST_FILE = IntentsExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.b1ink.JustNumber.IntentsExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.accommate.test.IntentsExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -592,12 +619,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = JustNumber/JustNumber.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = WB4K6375G3;
 				INFOPLIST_FILE = JustNumber/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.b1ink.JustNumber;
+				PRODUCT_BUNDLE_IDENTIFIER = com.accommate.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
@@ -609,12 +637,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = JustNumber/JustNumber.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = WB4K6375G3;
 				INFOPLIST_FILE = JustNumber/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = net.b1ink.JustNumber;
+				PRODUCT_BUNDLE_IDENTIFIER = com.accommate.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
