@@ -12,44 +12,6 @@ import CoreData
 
 class CallDirectoryHandler: CXCallDirectoryProvider {
 
-    func addIdentificationPhoneNumbersNew(to context: CXCallDirectoryExtensionContext) throws{
-        
-        let managedObjectContext = Storage.shared.context;
-        do {
-            let items = try managedObjectContext.fetch(CKItem.fetchRequest()) as [CKItem]
-            
-            for item in items{
-                NSLog("addIdentificationPhoneNumbersNew:item.number = \(item.number)")
-                
-                context.addIdentificationEntry(withNextSequentialPhoneNumber: item.number, label: item.name!)
-            }
-        } catch let error as NSError {
-            NSLog("Fetch error: \(error) description: \(error.userInfo)")
-        }
-        
-//        guard items
-//        for item in items{
-//            NSLog("addIdentificationPhoneNumbersNew:item.number = \(item.number)")
-//            
-//            context.addIdentificationEntry(withNextSequentialPhoneNumber: item.number, label: item.name!)
-//        }
-//        
-//        context.perform({ (managedObjectContext) in
-//            do {
-//
-//                let items = try managedObjectContext.
-//                
-//                for item in items{
-//                    NSLog("addIdentificationPhoneNumbersNew:item.number = \(item.number)")
-//                    
-//                    context.addIdentificationEntry(withNextSequentialPhoneNumber: item.number, label: item.name!)
-//                }
-//            } catch let error as NSError {
-//                NSLog("Fetch error: \(error) description: \(error.userInfo)")
-//            }
-//        }
-    }
-    
     override func beginRequest(with context: CXCallDirectoryExtensionContext) {
         NSLog("beginRequest")
         
@@ -65,9 +27,7 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
 //        }
 
         do {
-//            try addIdentificationPhoneNumbers(to: context)
-            
-            try addIdentificationPhoneNumbersNew(to: context)
+            try addIdentificationPhoneNumbers(to: context)
         } catch {
             NSLog("Unable to add identification phone numbers")
             let error = NSError(domain: "CallDirectoryHandler", code: 2, userInfo: nil)
@@ -99,14 +59,26 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
         // consider only loading a subset of numbers at a given time and using autorelease pool(s) to release objects allocated during each batch of numbers which are loaded.
         //
         // Numbers must be provided in numerically ascending order.
-        let phoneNumbers: [CXCallDirectoryPhoneNumber] = [ 8216449571, 82808508753, 827078759707 ]
-        let labels = [ "test111", "test2222", "test3333"]
-
-        for (phoneNumber, label) in zip(phoneNumbers, labels) {
-            context.addIdentificationEntry(withNextSequentialPhoneNumber: phoneNumber, label: label)
+        let managedObjectContext = Storage.shared.context;
+        do {
+            let fetchRequest: NSFetchRequest<CKItem> = CKItem.fetchRequest()
+            let sortData = NSSortDescriptor(key: #keyPath(CKItem.number), ascending: true)
+//            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "number", ascending: true)]
+            fetchRequest.sortDescriptors = [sortData]
+            fetchRequest.returnsObjectsAsFaults = false
+            
+//            items = try managedContext.fetch(fetchRequest)
+//            let items = try managedObjectContext.fetch(CKItem.fetchRequest()) as [CKItem]
+            
+            let items = try managedObjectContext.fetch(fetchRequest) as [CKItem]
+            
+            for item in items {
+                context.addIdentificationEntry(withNextSequentialPhoneNumber: item.number, label: item.name!)
+            }
+        } catch let error as NSError {
+            NSLog("Fetch error: \(error) description: \(error.userInfo)")
         }
     }
-
 }
 
 extension CallDirectoryHandler: CXCallDirectoryExtensionContextDelegate {
@@ -121,5 +93,4 @@ extension CallDirectoryHandler: CXCallDirectoryExtensionContextDelegate {
         // app may be notified about errors which occured while loading data even if the request to load data was initiated by
         // the user in Settings instead of via the app itself.
     }
-
 }

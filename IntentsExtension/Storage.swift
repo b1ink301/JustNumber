@@ -20,56 +20,34 @@ extension NSPersistentStoreCoordinator {
         case modelCreationError
         /// Gettings document directory fail
         case storePathNotFound
-        
+        /// Gettings group URL fail
         case groupURLNotFound
     }
     
     /// Return NSPersistentStoreCoordinator object
     static func coordinator(name: String) throws -> NSPersistentStoreCoordinator? {
-        NSLog("CoreData: coordinator : \(name)")
-        
-        
         guard let modelURL = Bundle.main.url(forResource: "JustNumber", withExtension: Storage.modelName) else {
-            
-            NSLog("CoreData: coordinator 1")
-
             throw CoordinatorError.modelFileNotFound
         }
         
         guard let model = NSManagedObjectModel(contentsOf: modelURL) else {
-            
-            NSLog("CoreData: coordinator 2")
             throw CoordinatorError.modelCreationError
         }
         
         let fileManager = FileManager.default
         
         guard let groupURL = fileManager.containerURL(forSecurityApplicationGroupIdentifier: Storage.appGroupID) else {
-            
-            NSLog("CoreData: coordinator 3")
             throw CoordinatorError.groupURLNotFound
         }
         
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: model)
-        
-//        guard let documents = fileManager.urls(for: .documentDirectory, in: .userDomainMask).last else {
-//            throw CoordinatorError.storePathNotFound
-//        }
-        
-        NSLog("CoreData: coordinator 4")
         do {
             let storeUrl = groupURL.appendingPathComponent("\(Storage.modelName).sqlite")
-//            let url = documents.appendingPathComponent("\(name).sqlite")
             let options = [ NSMigratePersistentStoresAutomaticallyOption : true,
                             NSInferMappingModelAutomaticallyOption : true ]
             try coordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: storeUrl, options: options)
-            
-            NSLog("CoreData: coordinator 5")
         } catch {
-            
-            NSLog("CoreData: coordinator 6")
             throw error
-            
         }
         
         return coordinator
@@ -77,7 +55,7 @@ extension NSPersistentStoreCoordinator {
 }
 
 struct Storage {
-    
+    public static let entityName = "Data"
     public static let modelName = "CKModel"
     public static let appGroupID = "group.100bang"
 
@@ -113,7 +91,6 @@ struct Storage {
     }()
     
     // MARK: Public methods
-    
     enum SaveStatus {
         case saved, rolledBack, hasNoChanges
     }
@@ -141,6 +118,22 @@ struct Storage {
             }
         }
         return .hasNoChanges
+    }
+    
+    mutating func add(name:String, display:String, number:Int64) -> Bool {
+        let entity = NSEntityDescription.entity(forEntityName: Storage.entityName, in: context)
+        let item = NSManagedObject(entity: entity!, insertInto: context)
+        
+        //set the entity values
+        item.setValue(name, forKey: #keyPath(CKItem.name))
+        item.setValue(display, forKey: #keyPath(CKItem.display))
+        item.setValue(number, forKey: #keyPath(CKItem.number))
+        
+//        item.setValue(name, forKey: "name")
+//        item.setValue(display, forKey: "display")
+//        item.setValue(number, forKey: "number")
+        
+        return save() == .saved
     }
     
 }
