@@ -9,15 +9,10 @@
 /* Begin PBXBuildFile section */
 		200D93F31EEA2F0300A65A24 /* PhoneNumberKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20CD5DEE1EE950F500AB48B4 /* PhoneNumberKit.framework */; };
 		200D93F51EEA40FC00A65A24 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200D93F41EEA40FC00A65A24 /* DetailTableViewController.swift */; };
-		20250D081EDBB6C6002CEF0C /* JNCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20250D071EDBB6C6002CEF0C /* JNCall.swift */; };
-		20250D0A1EDBB7DF002CEF0C /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20250D091EDBB7DF002CEF0C /* Array+Extension.swift */; };
-		20250D0C1EDBB89B002CEF0C /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20250D0B1EDBB89B002CEF0C /* URL+Extension.swift */; };
-		20250D0E1EDBB8DB002CEF0C /* StartCallConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20250D0D1EDBB8DB002CEF0C /* StartCallConvertible.swift */; };
-		20250D101EDBBE04002CEF0C /* NSUserActivity+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20250D0F1EDBBE04002CEF0C /* NSUserActivity+Extension.swift */; };
+		200D94021EEA8E5F00A65A24 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 200D94041EEA8E5F00A65A24 /* InfoPlist.strings */; };
 		20250D181EDBBFBB002CEF0C /* CallDirectoryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20250D171EDBBFBB002CEF0C /* CallDirectoryHandler.swift */; };
 		20250D1C1EDBBFBB002CEF0C /* IntentsExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 20250D151EDBBFBA002CEF0C /* IntentsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2085E9DE1ED3F7F90067D65D /* CKModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2085E9DC1ED3F7F90067D65D /* CKModel.xcdatamodeld */; };
-		20A4F0E61EE136CB0021A4C2 /* CallManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20250D051EDBB624002CEF0C /* CallManager.swift */; };
 		20A4F0EC1EE15FC00021A4C2 /* CKModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2085E9DC1ED3F7F90067D65D /* CKModel.xcdatamodeld */; };
 		20B12E931ED2CE2600521CD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B12E921ED2CE2600521CD2 /* AppDelegate.swift */; };
 		20B12E951ED2CE2600521CD2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B12E941ED2CE2600521CD2 /* ViewController.swift */; };
@@ -26,7 +21,6 @@
 		20B12E9D1ED2CE2600521CD2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B12E9B1ED2CE2600521CD2 /* LaunchScreen.storyboard */; };
 		20B12EA81ED2CE2700521CD2 /* JustNumberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B12EA71ED2CE2700521CD2 /* JustNumberTests.swift */; };
 		20B12EB31ED2CE2700521CD2 /* JustNumberUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B12EB21ED2CE2700521CD2 /* JustNumberUITests.swift */; };
-		20B12EC11ED3CED600521CD2 /* ProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B12EC01ED3CED600521CD2 /* ProviderDelegate.swift */; };
 		20B12EC31ED3D19100521CD2 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B12EC21ED3D19100521CD2 /* MainTableViewController.swift */; };
 		20CD5DD61EE8FB6500AB48B4 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CEF7D01EE7F431009B5685 /* Storage.swift */; };
 		20CD5DD71EE9106C00AB48B4 /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FD71041EE7FC4B009B1818 /* PersistentContainer.swift */; };
@@ -35,6 +29,7 @@
 		20CD5DEB1EE94AC800AB48B4 /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20CD5DEA1EE94AC800AB48B4 /* Contacts.framework */; };
 		20CD5DEF1EE950F500AB48B4 /* PhoneNumberKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20CD5DEE1EE950F500AB48B4 /* PhoneNumberKit.framework */; };
 		20CEF7D11EE7F431009B5685 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CEF7D01EE7F431009B5685 /* Storage.swift */; };
+		20D9914D1EEA8F0D00698AC9 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20D9914C1EEA8F0D00698AC9 /* Info.plist */; };
 		20FD71051EE7FC4B009B1818 /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FD71041EE7FC4B009B1818 /* PersistentContainer.swift */; };
 /* End PBXBuildFile section */
 
@@ -78,12 +73,10 @@
 
 /* Begin PBXFileReference section */
 		200D93F41EEA40FC00A65A24 /* DetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
-		20250D051EDBB624002CEF0C /* CallManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallManager.swift; sourceTree = "<group>"; };
-		20250D071EDBB6C6002CEF0C /* JNCall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JNCall.swift; sourceTree = "<group>"; };
-		20250D091EDBB7DF002CEF0C /* Array+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
-		20250D0B1EDBB89B002CEF0C /* URL+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
-		20250D0D1EDBB8DB002CEF0C /* StartCallConvertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartCallConvertible.swift; sourceTree = "<group>"; };
-		20250D0F1EDBBE04002CEF0C /* NSUserActivity+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSUserActivity+Extension.swift"; sourceTree = "<group>"; };
+		200D93FA1EEA8C7600A65A24 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
+		200D93FB1EEA8C7600A65A24 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		200D93FC1EEA8C7600A65A24 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/MainInterface.strings; sourceTree = "<group>"; };
+		200D94031EEA8E5F00A65A24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		20250D151EDBBFBA002CEF0C /* IntentsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = IntentsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		20250D171EDBBFBB002CEF0C /* CallDirectoryHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDirectoryHandler.swift; sourceTree = "<group>"; };
 		20250D191EDBBFBB002CEF0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -96,14 +89,12 @@
 		20B12E971ED2CE2600521CD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		20B12E991ED2CE2600521CD2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		20B12E9C1ED2CE2600521CD2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		20B12E9E1ED2CE2600521CD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20B12EA31ED2CE2700521CD2 /* JustNumberTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JustNumberTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		20B12EA71ED2CE2700521CD2 /* JustNumberTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustNumberTests.swift; sourceTree = "<group>"; };
 		20B12EA91ED2CE2700521CD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20B12EAE1ED2CE2700521CD2 /* JustNumberUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JustNumberUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		20B12EB21ED2CE2700521CD2 /* JustNumberUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustNumberUITests.swift; sourceTree = "<group>"; };
 		20B12EB41ED2CE2700521CD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		20B12EC01ED3CED600521CD2 /* ProviderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderDelegate.swift; sourceTree = "<group>"; };
 		20B12EC21ED3D19100521CD2 /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		20CD5DDC1EE9151F00AB48B4 /* share.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = share.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		20CD5DDE1EE9151F00AB48B4 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +105,8 @@
 		20CD5DEE1EE950F500AB48B4 /* PhoneNumberKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhoneNumberKit.framework; path = Carthage/Build/iOS/PhoneNumberKit.framework; sourceTree = "<group>"; };
 		20CEF7C91EE7822A009B5685 /* IntentsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IntentsExtension.entitlements; sourceTree = "<group>"; };
 		20CEF7D01EE7F431009B5685 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		20D9914C1EEA8F0D00698AC9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20F8B2D81EEA902900A92450 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		20FD71041EE7FC4B009B1818 /* PersistentContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistentContainer.swift; path = JustNumber/PersistentContainer.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -210,23 +203,17 @@
 		20B12E911ED2CE2600521CD2 /* JustNumber */ = {
 			isa = PBXGroup;
 			children = (
+				20D9914C1EEA8F0D00698AC9 /* Info.plist */,
 				20A4F0E71EE13B9F0021A4C2 /* JustNumber.entitlements */,
 				20B12E921ED2CE2600521CD2 /* AppDelegate.swift */,
 				20B12E941ED2CE2600521CD2 /* ViewController.swift */,
 				20B12E961ED2CE2600521CD2 /* Main.storyboard */,
 				20B12E991ED2CE2600521CD2 /* Assets.xcassets */,
 				20B12E9B1ED2CE2600521CD2 /* LaunchScreen.storyboard */,
-				20B12E9E1ED2CE2600521CD2 /* Info.plist */,
-				20B12EC01ED3CED600521CD2 /* ProviderDelegate.swift */,
 				20B12EC21ED3D19100521CD2 /* MainTableViewController.swift */,
 				2085E9DC1ED3F7F90067D65D /* CKModel.xcdatamodeld */,
-				20250D051EDBB624002CEF0C /* CallManager.swift */,
-				20250D071EDBB6C6002CEF0C /* JNCall.swift */,
-				20250D091EDBB7DF002CEF0C /* Array+Extension.swift */,
-				20250D0B1EDBB89B002CEF0C /* URL+Extension.swift */,
-				20250D0D1EDBB8DB002CEF0C /* StartCallConvertible.swift */,
-				20250D0F1EDBBE04002CEF0C /* NSUserActivity+Extension.swift */,
 				200D93F41EEA40FC00A65A24 /* DetailTableViewController.swift */,
+				200D94041EEA8E5F00A65A24 /* InfoPlist.strings */,
 			);
 			path = JustNumber;
 			sourceTree = "<group>";
@@ -413,6 +400,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ko,
 			);
 			mainGroup = 20B12E861ED2CE2600521CD2;
 			productRefGroup = 20B12E901ED2CE2600521CD2 /* Products */;
@@ -441,7 +429,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				20B12E9D1ED2CE2600521CD2 /* LaunchScreen.storyboard in Resources */,
+				200D94021EEA8E5F00A65A24 /* InfoPlist.strings in Resources */,
 				20B12E9A1ED2CE2600521CD2 /* Assets.xcassets in Resources */,
+				20D9914D1EEA8F0D00698AC9 /* Info.plist in Resources */,
 				20B12E981ED2CE2600521CD2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -519,18 +509,11 @@
 			files = (
 				200D93F51EEA40FC00A65A24 /* DetailTableViewController.swift in Sources */,
 				2085E9DE1ED3F7F90067D65D /* CKModel.xcdatamodeld in Sources */,
-				20B12EC11ED3CED600521CD2 /* ProviderDelegate.swift in Sources */,
-				20A4F0E61EE136CB0021A4C2 /* CallManager.swift in Sources */,
-				20250D0C1EDBB89B002CEF0C /* URL+Extension.swift in Sources */,
-				20250D0E1EDBB8DB002CEF0C /* StartCallConvertible.swift in Sources */,
 				20CD5DD61EE8FB6500AB48B4 /* Storage.swift in Sources */,
 				20CD5DD71EE9106C00AB48B4 /* PersistentContainer.swift in Sources */,
-				20250D081EDBB6C6002CEF0C /* JNCall.swift in Sources */,
-				20250D101EDBBE04002CEF0C /* NSUserActivity+Extension.swift in Sources */,
 				20B12E951ED2CE2600521CD2 /* ViewController.swift in Sources */,
 				20B12E931ED2CE2600521CD2 /* AppDelegate.swift in Sources */,
 				20B12EC31ED3D19100521CD2 /* MainTableViewController.swift in Sources */,
-				20250D0A1EDBB7DF002CEF0C /* Array+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,10 +562,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		200D94041EEA8E5F00A65A24 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				200D94031EEA8E5F00A65A24 /* Base */,
+				20F8B2D81EEA902900A92450 /* ko */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		20B12E961ED2CE2600521CD2 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				20B12E971ED2CE2600521CD2 /* Base */,
+				200D93FA1EEA8C7600A65A24 /* ko */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -591,6 +584,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				20B12E9C1ED2CE2600521CD2 /* Base */,
+				200D93FB1EEA8C7600A65A24 /* ko */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -599,6 +593,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				20CD5DE11EE9151F00AB48B4 /* Base */,
+				200D93FC1EEA8C7600A65A24 /* ko */,
 			);
 			name = MainInterface.storyboard;
 			sourceTree = "<group>";
@@ -644,6 +639,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -695,6 +691,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -739,6 +736,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				APP_NAME = "";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = JustNumber/JustNumber.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -748,7 +746,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = JustNumber/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/JustNumber/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.accommate.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -761,6 +759,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				APP_NAME = "";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = JustNumber/JustNumber.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -770,7 +769,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = JustNumber/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/JustNumber/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.accommate.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
