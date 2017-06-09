@@ -14,6 +14,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>share.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>2</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
@@ -38,6 +43,11 @@
 			<true/>
 		</dict>
 		<key>20B12EAD1ED2CE2700521CD2</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>20CD5DDB1EE9151F00AB48B4</key>
 		<dict>
 			<key>primary</key>
 			<true/>

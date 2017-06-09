@@ -7,16 +7,17 @@
 //
 
 import UIKit
-import CoreData
+import PhoneNumberKit
 
 class ViewController: UIViewController {
     
     @IBOutlet weak var containerView: UIView!
     
-    let segTableViewController = "CKTableViewController"
-    var tableViewController: CKTableViewController!
+    static let mainSegue = "mainSegue"
+    static let detailSegue = "DetailSegue"
     
-    //    var call:JNCall?
+    var mainTableViewController: MainTableViewController!
+    var detailTableViewController: DetailTableViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,99 +30,54 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == segTableViewController {
-            tableViewController = segue.destination as! CKTableViewController
+        if segue.identifier == ViewController.mainSegue {
+            mainTableViewController = segue.destination as! MainTableViewController
+        }
+        else if segue.identifier == ViewController.detailSegue {
+            detailTableViewController = segue.destination as? DetailTableViewController
+            detailTableViewController?.item = sender as? CKItem
         }
     }
     
     @IBAction func actionAdd(_ sender: Any) {
-        //        tableViewController.reloadData()
-        
-        do{
-            let context = Storage.shared.context
-            
-            let items = try context.fetch(CKItem.fetchRequest())
-            
-            if items.isEmpty {
-                let entity = NSEntityDescription.entity(forEntityName: "Data", in: context)
-                
-                let item = NSManagedObject(entity: entity!, insertInto: context)
-                
-                //set the entity values
-                item.setValue("test12345", forKey: "name")
-                item.setValue("8216449571", forKey: "display")
-                item.setValue(8216449571, forKey: "number")
-                
-                Storage.shared.save()
-                
-                self.tableViewController.reloadData()
-            }
-            else{
-                AppDelegate.shared.reloadExtension(completionHandler: { (error) -> Void in
-                    if let error = error {
-                        NSLog(error.localizedDescription)
-                    }
-                    else{
-                        NSLog("Successed fetching data from CoreData")
-                    }
-                })
-                
-            }
-            
-        } catch let error as NSError {
-            NSLog("Fetch error: \(error) description: \(error.userInfo)")
-        }
-        
-        
-        //        let backgroundTaskIdentifier = UIApplication.shared.beginBackgroundTask(expirationHandler: nil)
-        //        DispatchQueue.main.asyncAfter(wallDeadline: DispatchWallTime.now() + 1.5) {
-        //            AppDelegate.shared.displayIncomingCall(uuid: UUID(), handle: "07078759707", hasVideo: false) { _ in
-        //                UIApplication.shared.endBackgroundTask(backgroundTaskIdentifier)
-        //            }
-        //        }
-        
-        
-        if true {
-            return
-        }
         
         let alertController = UIAlertController(title: "연락처 추가", message: "새 연락처 추가합니다.", preferredStyle: .alert)
         let saveAction = UIAlertAction(title: "저장", style: .destructive, handler: {
             alert -> Void in
             
-            NSLog("save")
-            
             let firstTextField = alertController.textFields![0] as UITextField
             let secondTextField = alertController.textFields![1] as UITextField
             
-            if let name = firstTextField.text, let display = secondTextField.text {
-                NSLog("name = \(name), display = \(display)")
+            if let name = firstTextField.text, let phone = secondTextField.text {
+                NSLog("name = \(name), phone = \(phone)")
                 
-                if let number = NumberFormatter().number(from: secondTextField.text!)?.int64Value {
+                do {
+                    let phoneNumberKit = PhoneNumberKit()
+//                    let phoneNumber = try phoneNumberKit.parse(phone, withRegion: "KR", ignoreType: true)
+                    let phoneNumber = try phoneNumberKit.parse(phone)
+                    let display = phoneNumberKit.format(phoneNumber, toType: .international)
+                    var number = phoneNumberKit.format(phoneNumber, toType: .e164)
+                    let index = number.index(number.startIndex, offsetBy: 1)
+                    
+                    number = number.substring(from: index)
+                    
                     NSLog("number = \(number)")
                     
-                    //                    CoreDataStack.shared.add(name: firstTextField.text!, display: secondTextField.text!, number: number)
+                    let intNumber = NumberFormatter().number(from: number)!.int64Value
                     
-                    let context = Storage.shared.context
-                    let entity = NSEntityDescription.entity(forEntityName: "Data", in: context)
+                    NSLog("number = \(number), intNumber = \(intNumber)")
                     
-                    let item = NSManagedObject(entity: entity!, insertInto: context)
-                    
-                    //set the entity values
-                    item.setValue(name, forKey: "name")
-                    item.setValue(display, forKey: "display")
-                    item.setValue(number, forKey: "number")
-                    
-                    Storage.shared.save()
-                    
-                    self.tableViewController.reloadData()
+                    if( Storage.shared.add(name: name, display: display, number: intNumber) ){
+                        self.mainTableViewController.reloadData()
+                    }
+                } catch let error as NSError {
+                    NSLog("Fetch error: \(error) description: \(error.userInfo)")
                 }
             }
         })
         
         let cancelAction = UIAlertAction(title: "취소", style: UIAlertActionStyle.cancel, handler: {
             (action : UIAlertAction!) -> Void in
-            
         })
         
         alertController.addTextField { (textField : UITextField!) -> Void in

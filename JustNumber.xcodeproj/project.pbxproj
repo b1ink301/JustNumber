@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		200D93F31EEA2F0300A65A24 /* PhoneNumberKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20CD5DEE1EE950F500AB48B4 /* PhoneNumberKit.framework */; };
+		200D93F51EEA40FC00A65A24 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200D93F41EEA40FC00A65A24 /* DetailTableViewController.swift */; };
 		20250D081EDBB6C6002CEF0C /* JNCall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20250D071EDBB6C6002CEF0C /* JNCall.swift */; };
 		20250D0A1EDBB7DF002CEF0C /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20250D091EDBB7DF002CEF0C /* Array+Extension.swift */; };
 		20250D0C1EDBB89B002CEF0C /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20250D0B1EDBB89B002CEF0C /* URL+Extension.swift */; };
@@ -25,9 +27,13 @@
 		20B12EA81ED2CE2700521CD2 /* JustNumberTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B12EA71ED2CE2700521CD2 /* JustNumberTests.swift */; };
 		20B12EB31ED2CE2700521CD2 /* JustNumberUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B12EB21ED2CE2700521CD2 /* JustNumberUITests.swift */; };
 		20B12EC11ED3CED600521CD2 /* ProviderDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B12EC01ED3CED600521CD2 /* ProviderDelegate.swift */; };
-		20B12EC31ED3D19100521CD2 /* CKTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B12EC21ED3D19100521CD2 /* CKTableViewController.swift */; };
+		20B12EC31ED3D19100521CD2 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B12EC21ED3D19100521CD2 /* MainTableViewController.swift */; };
 		20CD5DD61EE8FB6500AB48B4 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CEF7D01EE7F431009B5685 /* Storage.swift */; };
 		20CD5DD71EE9106C00AB48B4 /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FD71041EE7FC4B009B1818 /* PersistentContainer.swift */; };
+		20CD5DDF1EE9151F00AB48B4 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD5DDE1EE9151F00AB48B4 /* ShareViewController.swift */; };
+		20CD5DE21EE9151F00AB48B4 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20CD5DE01EE9151F00AB48B4 /* MainInterface.storyboard */; };
+		20CD5DEB1EE94AC800AB48B4 /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20CD5DEA1EE94AC800AB48B4 /* Contacts.framework */; };
+		20CD5DEF1EE950F500AB48B4 /* PhoneNumberKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20CD5DEE1EE950F500AB48B4 /* PhoneNumberKit.framework */; };
 		20CEF7D11EE7F431009B5685 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CEF7D01EE7F431009B5685 /* Storage.swift */; };
 		20FD71051EE7FC4B009B1818 /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FD71041EE7FC4B009B1818 /* PersistentContainer.swift */; };
 /* End PBXBuildFile section */
@@ -71,6 +77,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		200D93F41EEA40FC00A65A24 /* DetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 		20250D051EDBB624002CEF0C /* CallManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CallManager.swift; sourceTree = "<group>"; };
 		20250D071EDBB6C6002CEF0C /* JNCall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JNCall.swift; sourceTree = "<group>"; };
 		20250D091EDBB7DF002CEF0C /* Array+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
@@ -97,7 +104,14 @@
 		20B12EB21ED2CE2700521CD2 /* JustNumberUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustNumberUITests.swift; sourceTree = "<group>"; };
 		20B12EB41ED2CE2700521CD2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20B12EC01ED3CED600521CD2 /* ProviderDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProviderDelegate.swift; sourceTree = "<group>"; };
-		20B12EC21ED3D19100521CD2 /* CKTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CKTableViewController.swift; sourceTree = "<group>"; };
+		20B12EC21ED3D19100521CD2 /* MainTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		20CD5DDC1EE9151F00AB48B4 /* share.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = share.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		20CD5DDE1EE9151F00AB48B4 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		20CD5DE11EE9151F00AB48B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		20CD5DE31EE9151F00AB48B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20CD5DEA1EE94AC800AB48B4 /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
+		20CD5DEC1EE950D000AB48B4 /* iOS */ = {isa = PBXFileReference; lastKnownFileType = folder; name = iOS; path = Carthage/Build/iOS; sourceTree = "<group>"; };
+		20CD5DEE1EE950F500AB48B4 /* PhoneNumberKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhoneNumberKit.framework; path = Carthage/Build/iOS/PhoneNumberKit.framework; sourceTree = "<group>"; };
 		20CEF7C91EE7822A009B5685 /* IntentsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IntentsExtension.entitlements; sourceTree = "<group>"; };
 		20CEF7D01EE7F431009B5685 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		20FD71041EE7FC4B009B1818 /* PersistentContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistentContainer.swift; path = JustNumber/PersistentContainer.swift; sourceTree = SOURCE_ROOT; };
@@ -115,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				200D93F31EEA2F0300A65A24 /* PhoneNumberKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +144,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20CD5DD91EE9151F00AB48B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20CD5DEB1EE94AC800AB48B4 /* Contacts.framework in Frameworks */,
+				20CD5DEF1EE950F500AB48B4 /* PhoneNumberKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +174,9 @@
 		2085EA5E1ED40F950067D65D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				20CD5DEE1EE950F500AB48B4 /* PhoneNumberKit.framework */,
+				20CD5DEC1EE950D000AB48B4 /* iOS */,
+				20CD5DEA1EE94AC800AB48B4 /* Contacts.framework */,
 				2085EA5F1ED40F950067D65D /* CoreData.framework */,
 			);
 			name = Frameworks;
@@ -162,6 +189,7 @@
 				20B12EA61ED2CE2700521CD2 /* JustNumberTests */,
 				20B12EB11ED2CE2700521CD2 /* JustNumberUITests */,
 				20250D161EDBBFBB002CEF0C /* IntentsExtension */,
+				20CD5DDD1EE9151F00AB48B4 /* share */,
 				20B12E901ED2CE2600521CD2 /* Products */,
 				2085EA5E1ED40F950067D65D /* Frameworks */,
 			);
@@ -174,6 +202,7 @@
 				20B12EA31ED2CE2700521CD2 /* JustNumberTests.xctest */,
 				20B12EAE1ED2CE2700521CD2 /* JustNumberUITests.xctest */,
 				20250D151EDBBFBA002CEF0C /* IntentsExtension.appex */,
+				20CD5DDC1EE9151F00AB48B4 /* share.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -189,7 +218,7 @@
 				20B12E9B1ED2CE2600521CD2 /* LaunchScreen.storyboard */,
 				20B12E9E1ED2CE2600521CD2 /* Info.plist */,
 				20B12EC01ED3CED600521CD2 /* ProviderDelegate.swift */,
-				20B12EC21ED3D19100521CD2 /* CKTableViewController.swift */,
+				20B12EC21ED3D19100521CD2 /* MainTableViewController.swift */,
 				2085E9DC1ED3F7F90067D65D /* CKModel.xcdatamodeld */,
 				20250D051EDBB624002CEF0C /* CallManager.swift */,
 				20250D071EDBB6C6002CEF0C /* JNCall.swift */,
@@ -197,6 +226,7 @@
 				20250D0B1EDBB89B002CEF0C /* URL+Extension.swift */,
 				20250D0D1EDBB8DB002CEF0C /* StartCallConvertible.swift */,
 				20250D0F1EDBBE04002CEF0C /* NSUserActivity+Extension.swift */,
+				200D93F41EEA40FC00A65A24 /* DetailTableViewController.swift */,
 			);
 			path = JustNumber;
 			sourceTree = "<group>";
@@ -217,6 +247,16 @@
 				20B12EB41ED2CE2700521CD2 /* Info.plist */,
 			);
 			path = JustNumberUITests;
+			sourceTree = "<group>";
+		};
+		20CD5DDD1EE9151F00AB48B4 /* share */ = {
+			isa = PBXGroup;
+			children = (
+				20CD5DDE1EE9151F00AB48B4 /* ShareViewController.swift */,
+				20CD5DE01EE9151F00AB48B4 /* MainInterface.storyboard */,
+				20CD5DE31EE9151F00AB48B4 /* Info.plist */,
+			);
+			path = share;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +287,7 @@
 				20B12E8C1ED2CE2600521CD2 /* Frameworks */,
 				20B12E8D1ED2CE2600521CD2 /* Resources */,
 				2079C8191ED5326C00FCDB6A /* Embed App Extensions */,
+				200D93F21EEA285400A65A24 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -294,6 +335,24 @@
 			productReference = 20B12EAE1ED2CE2700521CD2 /* JustNumberUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		20CD5DDB1EE9151F00AB48B4 /* share */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 20CD5DE71EE9151F00AB48B4 /* Build configuration list for PBXNativeTarget "share" */;
+			buildPhases = (
+				20CD5DD81EE9151F00AB48B4 /* Sources */,
+				20CD5DD91EE9151F00AB48B4 /* Frameworks */,
+				20CD5DDA1EE9151F00AB48B4 /* Resources */,
+				20CD5DF01EE9512600AB48B4 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = share;
+			productName = share;
+			productReference = 20CD5DDC1EE9151F00AB48B4 /* share.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -340,6 +399,11 @@
 						ProvisioningStyle = Manual;
 						TestTargetID = 20B12E8E1ED2CE2600521CD2;
 					};
+					20CD5DDB1EE9151F00AB48B4 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = WB4K6375G3;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 20B12E8A1ED2CE2600521CD2 /* Build configuration list for PBXProject "JustNumber" */;
@@ -359,6 +423,7 @@
 				20B12EA21ED2CE2700521CD2 /* JustNumberTests */,
 				20B12EAD1ED2CE2700521CD2 /* JustNumberUITests */,
 				20250D141EDBBFBA002CEF0C /* IntentsExtension */,
+				20CD5DDB1EE9151F00AB48B4 /* share */,
 			);
 		};
 /* End PBXProject section */
@@ -395,7 +460,46 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		20CD5DDA1EE9151F00AB48B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20CD5DE21EE9151F00AB48B4 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		200D93F21EEA285400A65A24 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/PhoneNumberKit.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		20CD5DF01EE9512600AB48B4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/PhoneNumberKit.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		20250D111EDBBFBA002CEF0C /* Sources */ = {
@@ -413,6 +517,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				200D93F51EEA40FC00A65A24 /* DetailTableViewController.swift in Sources */,
 				2085E9DE1ED3F7F90067D65D /* CKModel.xcdatamodeld in Sources */,
 				20B12EC11ED3CED600521CD2 /* ProviderDelegate.swift in Sources */,
 				20A4F0E61EE136CB0021A4C2 /* CallManager.swift in Sources */,
@@ -424,7 +529,7 @@
 				20250D101EDBBE04002CEF0C /* NSUserActivity+Extension.swift in Sources */,
 				20B12E951ED2CE2600521CD2 /* ViewController.swift in Sources */,
 				20B12E931ED2CE2600521CD2 /* AppDelegate.swift in Sources */,
-				20B12EC31ED3D19100521CD2 /* CKTableViewController.swift in Sources */,
+				20B12EC31ED3D19100521CD2 /* MainTableViewController.swift in Sources */,
 				20250D0A1EDBB7DF002CEF0C /* Array+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -442,6 +547,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				20B12EB31ED2CE2700521CD2 /* JustNumberUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		20CD5DD81EE9151F00AB48B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20CD5DDF1EE9151F00AB48B4 /* ShareViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,6 +593,14 @@
 				20B12E9C1ED2CE2600521CD2 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		20CD5DE01EE9151F00AB48B4 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20CD5DE11EE9151F00AB48B4 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -623,6 +744,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = WB4K6375G3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = JustNumber/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.accommate.test;
@@ -641,6 +766,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = WB4K6375G3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = JustNumber/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.accommate.test;
@@ -712,6 +841,46 @@
 			};
 			name = Release;
 		};
+		20CD5DE81EE9151F00AB48B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = WB4K6375G3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = share/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.accommate.test.share;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		20CD5DE91EE9151F00AB48B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = WB4K6375G3;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = share/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.accommate.test.share;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -756,6 +925,15 @@
 			buildConfigurations = (
 				20B12EBE1ED2CE2700521CD2 /* Debug */,
 				20B12EBF1ED2CE2700521CD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		20CD5DE71EE9151F00AB48B4 /* Build configuration list for PBXNativeTarget "share" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				20CD5DE81EE9151F00AB48B4 /* Debug */,
+				20CD5DE91EE9151F00AB48B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
