@@ -1,0 +1,21 @@
+
+/* Class = "UITextField"; placeholder = "Memo"; ObjectID = "3Ln-y2-vz7"; */
+"3Ln-y2-vz7.placeholder" = "Memo";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "KDw-XO-p8f"; */
+"KDw-XO-p8f.text" = "Label";
+
+/* Class = "UITableViewSection"; headerTitle = "Info"; ObjectID = "Ogf-xq-XJP"; */
+"Ogf-xq-XJP.headerTitle" = "Info";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "QZh-br-5sY"; */
+"QZh-br-5sY.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Name"; ObjectID = "RwK-rJ-upE"; */
+"RwK-rJ-upE.placeholder" = "Name";
+
+/* Class = "UITableViewSection"; headerTitle = "Memo"; ObjectID = "Sfg-zt-wAW"; */
+"Sfg-zt-wAW.headerTitle" = "Memo";
+
+/* Class = "UINavigationItem"; title = "JustNumber"; ObjectID = "q2t-xx-Ono"; */
+"q2t-xx-Ono.title" = "JustNumber";
