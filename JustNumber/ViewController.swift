@@ -34,14 +34,26 @@ class ViewController: UIViewController {
             mainTableViewController = segue.destination as! MainTableViewController
         }
         else if segue.identifier == ViewController.detailSegue {
-            detailTableViewController = segue.destination as? DetailTableViewController
-            detailTableViewController?.item = sender as? CKItem
+            let detailTableViewController = segue.destination as! DetailTableViewController
+            detailTableViewController.item = sender as? CKItem
+            detailTableViewController.title = "Detail"
+            
+            detailTableViewController.completionHandler = { data in
+                if data != nil && Storage.shared.update(data: data){
+                    NSLog("Updated...")
+                    
+                    self.mainTableViewController.reloadData()
+                }
+            }
         }
     }
     
     @IBAction func actionAdd(_ sender: Any) {
         
-        let alertController = UIAlertController(title: "연락처 추가", message: "새 연락처 추가합니다.", preferredStyle: .alert)
+//        let spamUrl = SpamManager.shared().getSpamUrl("") as String
+//        NSLog("url = \(spamUrl)")
+        
+        let alertController = UIAlertController(title: "연락처 등록", message: "새 연락처 추가합니다.", preferredStyle: .alert)
         let saveAction = UIAlertAction(title: "저장", style: .destructive, handler: {
             alert -> Void in
             

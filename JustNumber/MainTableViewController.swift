@@ -67,7 +67,6 @@ class MainTableViewController: UITableViewController {
         let item = items[indexPath.row]
         
         parent?.performSegue(withIdentifier: ViewController.detailSegue, sender: item)
-    
     }
     
     

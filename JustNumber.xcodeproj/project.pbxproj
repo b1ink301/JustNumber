@@ -12,6 +12,7 @@
 		200D94021EEA8E5F00A65A24 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 200D94041EEA8E5F00A65A24 /* InfoPlist.strings */; };
 		20250D181EDBBFBB002CEF0C /* CallDirectoryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20250D171EDBBFBB002CEF0C /* CallDirectoryHandler.swift */; };
 		20250D1C1EDBBFBB002CEF0C /* IntentsExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 20250D151EDBBFBA002CEF0C /* IntentsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		20556B8F1EEE2884001B82D3 /* SpamManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 20556B8E1EEE2884001B82D3 /* SpamManager.m */; };
 		2085E9DE1ED3F7F90067D65D /* CKModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2085E9DC1ED3F7F90067D65D /* CKModel.xcdatamodeld */; };
 		20A4F0EC1EE15FC00021A4C2 /* CKModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2085E9DC1ED3F7F90067D65D /* CKModel.xcdatamodeld */; };
 		20B12E931ED2CE2600521CD2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B12E921ED2CE2600521CD2 /* AppDelegate.swift */; };
@@ -80,6 +81,8 @@
 		20250D151EDBBFBA002CEF0C /* IntentsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = IntentsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		20250D171EDBBFBB002CEF0C /* CallDirectoryHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDirectoryHandler.swift; sourceTree = "<group>"; };
 		20250D191EDBBFBB002CEF0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20556B8D1EEE2884001B82D3 /* JustNumber-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JustNumber-Bridging-Header.h"; sourceTree = "<group>"; };
+		20556B8E1EEE2884001B82D3 /* SpamManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpamManager.m; sourceTree = "<group>"; };
 		2085E9DD1ED3F7F90067D65D /* CKModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CKModel.xcdatamodel; sourceTree = "<group>"; };
 		2085EA5F1ED40F950067D65D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		20A4F0E71EE13B9F0021A4C2 /* JustNumber.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JustNumber.entitlements; sourceTree = "<group>"; };
@@ -214,6 +217,8 @@
 				2085E9DC1ED3F7F90067D65D /* CKModel.xcdatamodeld */,
 				200D93F41EEA40FC00A65A24 /* DetailTableViewController.swift */,
 				200D94041EEA8E5F00A65A24 /* InfoPlist.strings */,
+				20556B8E1EEE2884001B82D3 /* SpamManager.m */,
+				20556B8D1EEE2884001B82D3 /* JustNumber-Bridging-Header.h */,
 			);
 			path = JustNumber;
 			sourceTree = "<group>";
@@ -363,6 +368,7 @@
 					20B12E8E1ED2CE2600521CD2 = {
 						CreatedOnToolsVersion = 8.3;
 						DevelopmentTeam = WB4K6375G3;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -507,6 +513,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20556B8F1EEE2884001B82D3 /* SpamManager.m in Sources */,
 				200D93F51EEA40FC00A65A24 /* DetailTableViewController.swift in Sources */,
 				2085E9DE1ED3F7F90067D65D /* CKModel.xcdatamodeld in Sources */,
 				20CD5DD61EE8FB6500AB48B4 /* Storage.swift in Sources */,
@@ -738,6 +745,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				APP_NAME = "";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = JustNumber/JustNumber.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -751,6 +759,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.accommate.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "JustNumber/JustNumber-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -761,6 +771,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				APP_NAME = "";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = JustNumber/JustNumber.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -774,6 +785,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.accommate.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "JustNumber/JustNumber-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
