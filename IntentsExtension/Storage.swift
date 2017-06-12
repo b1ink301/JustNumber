@@ -129,11 +129,41 @@ struct Storage {
         item.setValue(display, forKey: #keyPath(CKItem.display))
         item.setValue(number, forKey: #keyPath(CKItem.number))
         
-//        item.setValue(name, forKey: "name")
-//        item.setValue(display, forKey: "display")
-//        item.setValue(number, forKey: "number")
-        
         return save() == .saved
+    }
+    
+    mutating func update(data:CKItem) -> Bool {
+        
+        let fetchRequest: NSFetchRequest<CKItem> = CKItem.fetchRequest()
+//        let fetchRequest = NSBatchUpdateRequest(entityName: Storage.entityName)
+//        fetchRequest.predicate = NSPredicate(format: "number = %d", item.number)
+        
+        var hasItem:Bool = false
+        
+        do {
+            let searchResults = try context.fetch(fetchRequest)
+           
+            for item in searchResults {
+                if item.number == data.number {
+                    item.name = data.name
+                    item.display = data.display
+                    
+                    if data.memo != nil {
+                        item.memo = data.memo
+                    }
+                    
+                    hasItem = true
+                    
+                    break
+                }
+            }
+            
+        } catch {
+            print("Error with request: \(error)")
+        }
+
+        
+        return hasItem ? save() == .saved : false
     }
     
 }

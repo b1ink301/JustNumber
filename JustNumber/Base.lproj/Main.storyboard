@@ -25,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="-1348" y="-94"/>
         </scene>
-        <!--JustNumber-->
+        <!--whoau-->
         <scene sceneID="u1y-Wx-glf">
             <objects>
                 <viewController id="E2i-mU-1nL" customClass="ViewController" customModule="JustNumber" customModuleProvider="target" sceneMemberID="viewController">
@@ -50,7 +50,7 @@
                             <constraint firstItem="8YH-vS-ZcM" firstAttribute="height" secondItem="Phl-Ye-BWS" secondAttribute="height" id="pNw-ng-Cr6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="JustNumber" id="q2t-xx-Ono">
+                    <navigationItem key="navigationItem" title="whoau" id="q2t-xx-Ono">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="N1s-Wm-bmE">
                             <connections>
                                 <action selector="actionAdd:" destination="E2i-mU-1nL" id="nse-8C-1dD"/>
@@ -132,8 +132,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" usesAttributedText="YES" placeholder="Name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RwK-rJ-upE">
-                                                    <rect key="frame" x="19" y="12" width="335" height="28"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="Name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="RwK-rJ-upE">
+                                                    <rect key="frame" x="20" y="7" width="335" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <attributedString key="attributedText"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -174,8 +174,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" usesAttributedText="YES" placeholder="Memo" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3Ln-y2-vz7">
-                                                    <rect key="frame" x="20" y="11" width="335" height="28"/>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" usesAttributedText="YES" placeholder="Memo" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="3Ln-y2-vz7">
+                                                    <rect key="frame" x="20" y="7" width="335" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <attributedString key="attributedText"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -202,5 +202,5 @@
             <point key="canvasLocation" x="253.59999999999999" y="-94.002998500749626"/>
         </scene>
     </scenes>
-    <color key="tintColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
 </document>
