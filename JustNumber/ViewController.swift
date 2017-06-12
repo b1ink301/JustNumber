@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     static let detailSegue = "DetailSegue"
     
     var mainTableViewController: MainTableViewController!
-    var detailTableViewController: DetailTableViewController?
+//    var detailTableViewController: DetailTableViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +38,8 @@ class ViewController: UIViewController {
             detailTableViewController.item = sender as? CKItem
             detailTableViewController.title = "Detail"
             
-            detailTableViewController.completionHandler = { data in
-                if data != nil && Storage.shared.update(data: data){
+            detailTableViewController.completionHandler = { (data) -> Void in
+                if Storage.shared.update(data: data){
                     NSLog("Updated...")
                     
                     self.mainTableViewController.reloadData()
