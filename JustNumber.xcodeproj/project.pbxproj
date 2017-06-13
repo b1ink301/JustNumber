@@ -10,6 +10,8 @@
 		200D93F31EEA2F0300A65A24 /* PhoneNumberKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20CD5DEE1EE950F500AB48B4 /* PhoneNumberKit.framework */; };
 		200D93F51EEA40FC00A65A24 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200D93F41EEA40FC00A65A24 /* DetailTableViewController.swift */; };
 		200D94021EEA8E5F00A65A24 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 200D94041EEA8E5F00A65A24 /* InfoPlist.strings */; };
+		200F5B831EEF7455002FE82C /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200F5B821EEF7455002FE82C /* DataSource.swift */; };
+		200F5B851EEF74FE002FE82C /* MainFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200F5B841EEF74FE002FE82C /* MainFetchedResultsController.swift */; };
 		20250D181EDBBFBB002CEF0C /* CallDirectoryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20250D171EDBBFBB002CEF0C /* CallDirectoryHandler.swift */; };
 		20250D1C1EDBBFBB002CEF0C /* IntentsExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 20250D151EDBBFBA002CEF0C /* IntentsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		20556B8F1EEE2884001B82D3 /* SpamManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 20556B8E1EEE2884001B82D3 /* SpamManager.m */; };
@@ -74,10 +76,12 @@
 
 /* Begin PBXFileReference section */
 		200D93F41EEA40FC00A65A24 /* DetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
-		200D93FA1EEA8C7600A65A24 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
 		200D93FB1EEA8C7600A65A24 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		200D93FC1EEA8C7600A65A24 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/MainInterface.strings; sourceTree = "<group>"; };
 		200D94031EEA8E5F00A65A24 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		200F5B821EEF7455002FE82C /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		200F5B841EEF74FE002FE82C /* MainFetchedResultsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainFetchedResultsController.swift; sourceTree = "<group>"; };
+		200F5B881EEFB341002FE82C /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Main.strings; sourceTree = "<group>"; };
 		20250D151EDBBFBA002CEF0C /* IntentsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = IntentsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		20250D171EDBBFBB002CEF0C /* CallDirectoryHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallDirectoryHandler.swift; sourceTree = "<group>"; };
 		20250D191EDBBFBB002CEF0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -219,6 +223,8 @@
 				200D94041EEA8E5F00A65A24 /* InfoPlist.strings */,
 				20556B8E1EEE2884001B82D3 /* SpamManager.m */,
 				20556B8D1EEE2884001B82D3 /* JustNumber-Bridging-Header.h */,
+				200F5B821EEF7455002FE82C /* DataSource.swift */,
+				200F5B841EEF74FE002FE82C /* MainFetchedResultsController.swift */,
 			);
 			path = JustNumber;
 			sourceTree = "<group>";
@@ -516,7 +522,9 @@
 				20556B8F1EEE2884001B82D3 /* SpamManager.m in Sources */,
 				200D93F51EEA40FC00A65A24 /* DetailTableViewController.swift in Sources */,
 				2085E9DE1ED3F7F90067D65D /* CKModel.xcdatamodeld in Sources */,
+				200F5B831EEF7455002FE82C /* DataSource.swift in Sources */,
 				20CD5DD61EE8FB6500AB48B4 /* Storage.swift in Sources */,
+				200F5B851EEF74FE002FE82C /* MainFetchedResultsController.swift in Sources */,
 				20CD5DD71EE9106C00AB48B4 /* PersistentContainer.swift in Sources */,
 				20B12E951ED2CE2600521CD2 /* ViewController.swift in Sources */,
 				20B12E931ED2CE2600521CD2 /* AppDelegate.swift in Sources */,
@@ -582,7 +590,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				20B12E971ED2CE2600521CD2 /* Base */,
-				200D93FA1EEA8C7600A65A24 /* ko */,
+				200F5B881EEFB341002FE82C /* ko */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
