@@ -17,14 +17,16 @@ class DetailTableViewController: UITableViewController, UITextFieldDelegate, UIT
     
     var completionHandler: (CKItem, Bool) -> Void = {_ in }
     var isUpdated : Bool = false
+    var newName : String?
+    var newMemo : String?
     
     var item: CKItem! {
         
         didSet {
             DispatchQueue.main.async {
-                self.nameTextField.text = self.item?.name
-                self.numberLabel.text = self.item?.display
-                self.memoTextView.text = self.item?.memo
+                self.nameTextField.text = self.item.name
+                self.numberLabel.text = self.item.display
+                self.memoTextView.text = self.item.memo
             }
         }
     }
@@ -46,24 +48,44 @@ class DetailTableViewController: UITableViewController, UITextFieldDelegate, UIT
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        isUpdated = true
         
         if self.nameTextField == textField {
-            self.item?.name = textField.text
+            isUpdated = true
+            self.newName = textField.text
         }
-        
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        isUpdated = true
         
         if self.memoTextView == textView {
-            self.item.memo = textView.text
+            isUpdated = true
+            self.newMemo = textView.text
         }
     }
     
     @IBAction func actionSave(_ sender: UIButton) {
+        
+        if self.nameTextField.isFirstResponder {
+            self.nameTextField.resignFirstResponder()
+        }
+        if self.memoTextView.isFirstResponder {
+            self.memoTextView.resignFirstResponder()
+        }
+        
+        
         if isUpdated {
+            isUpdated = false
+            
+            NSLog("actionSave")
+            
+            if let name = self.newName {
+                self.item.name = name
+            }
+            
+            if let memo = self.newMemo {
+                self.item.memo = memo
+            }
+            
             self.completionHandler(self.item, false)
         }
     }
