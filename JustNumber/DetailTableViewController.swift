@@ -8,24 +8,23 @@
 
 import UIKit
 
-class DetailTableViewController: UITableViewController, UITextFieldDelegate{
+class DetailTableViewController: UITableViewController, UITextFieldDelegate, UITextViewDelegate{
     
-    @IBOutlet weak var memoTextField: UITextField!
+    
+    @IBOutlet weak var memoTextView: UITextView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var numberLabel: UILabel!
     
-    var completionHandler: (CKItem) -> Void = {_ in }
+    var completionHandler: (CKItem, Bool) -> Void = {_ in }
     var isUpdated : Bool = false
     
-    var item: CKItem? {    
+    var item: CKItem! {
         
         didSet {
-//            tableView.reloadData()
-            
             DispatchQueue.main.async {
                 self.nameTextField.text = self.item?.name
                 self.numberLabel.text = self.item?.display
-                self.memoTextField.text = self.item?.memo
+                self.memoTextView.text = self.item?.memo
             }
         }
     }
@@ -34,7 +33,7 @@ class DetailTableViewController: UITableViewController, UITextFieldDelegate{
         super.viewDidLoad()
         
         self.nameTextField.delegate = self as UITextFieldDelegate
-        self.memoTextField.delegate = self as UITextFieldDelegate
+        self.memoTextView.delegate = self as UITextViewDelegate
     }
     
     override func didReceiveMemoryWarning() {
@@ -52,17 +51,27 @@ class DetailTableViewController: UITableViewController, UITextFieldDelegate{
         if self.nameTextField == textField {
             self.item?.name = textField.text
         }
-        else if self.memoTextField == textField {
-            self.item?.memo = textField.text
-        }
-        
-        self.completionHandler(self.item!)
         
     }
-}
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        isUpdated = true
+        
+        if self.memoTextView == textView {
+            self.item.memo = textView.text
+        }
+    }
+    
+    @IBAction func actionSave(_ sender: UIButton) {
+        if isUpdated {
+            self.completionHandler(self.item, false)
+        }
+    }
+    
 
-//class CKTableViewCell: UITableViewCell {
-//    @IBOutlet weak var name: UILabel!
-//    @IBOutlet weak var phone: UILabel!
-//    
-//}
+    @IBAction func actionDelete(_ sender: UIButton) {
+        self.completionHandler(self.item, true)
+        
+        self.navigationController?.popViewController(animated: true);
+    }
+}

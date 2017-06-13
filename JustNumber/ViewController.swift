@@ -33,19 +33,29 @@ class ViewController: UIViewController {
         if segue.identifier == ViewController.mainSegue {
             mainTableViewController = segue.destination as! MainTableViewController
         }
-        else if segue.identifier == ViewController.detailSegue {
-            let detailTableViewController = segue.destination as! DetailTableViewController
-            detailTableViewController.item = sender as? CKItem
-            detailTableViewController.title = "Detail"
-            
-            detailTableViewController.completionHandler = { (data) -> Void in
-                if Storage.shared.update(data: data){
-                    NSLog("Updated...")
-                    
-                    self.mainTableViewController.reloadData()
-                }
-            }
+        
+    }
+    
+    func showToast(msg:String) {
+        
+        let toast = UIAlertController()
+        toast.message = msg;
+        self.present(toast, animated: true)
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2)) {
+            toast.dismiss(animated: true)
         }
+    }
+    
+    @IBAction func actionRefresh(_ sender: Any) {
+        AppDelegate.shared.reloadExtension(completionHandler: { (error) -> Void in
+            if let error = error {
+                NSLog(error.localizedDescription)
+            }
+            else{
+                self.showToast(msg: "Successed fetching data from CoreData")
+            }
+        })
     }
     
     @IBAction func actionAdd(_ sender: Any) {
@@ -80,7 +90,7 @@ class ViewController: UIViewController {
                     NSLog("number = \(number), intNumber = \(intNumber)")
                     
                     if( Storage.shared.add(name: name, display: display, number: intNumber) ){
-                        self.mainTableViewController.reloadData()
+//                        self.mainTableViewController.reloadData()
                     }
                 } catch let error as NSError {
                     NSLog("Fetch error: \(error) description: \(error.userInfo)")

@@ -1,21 +1,29 @@
 
-/* Class = "UITextField"; placeholder = "Memo"; ObjectID = "3Ln-y2-vz7"; */
-"3Ln-y2-vz7.placeholder" = "Memo";
+/* Class = "UIButton"; normalTitle = "Delete"; ObjectID = "8d8-dP-TUu"; */
+"8d8-dP-TUu.normalTitle" = "삭제";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "KDw-XO-p8f"; */
 "KDw-XO-p8f.text" = "Label";
 
 /* Class = "UITableViewSection"; headerTitle = "Info"; ObjectID = "Ogf-xq-XJP"; */
-"Ogf-xq-XJP.headerTitle" = "Info";
+"Ogf-xq-XJP.headerTitle" = "정보";
+
+/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "Q9u-1n-6Vd"; */
+"Q9u-1n-6Vd.normalTitle" = "저장";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "QZh-br-5sY"; */
 "QZh-br-5sY.text" = "Label";
 
 /* Class = "UITextField"; placeholder = "Name"; ObjectID = "RwK-rJ-upE"; */
-"RwK-rJ-upE.placeholder" = "Name";
+"RwK-rJ-upE.placeholder" = "별칭";
 
 /* Class = "UITableViewSection"; headerTitle = "Memo"; ObjectID = "Sfg-zt-wAW"; */
-"Sfg-zt-wAW.headerTitle" = "Memo";
+"Sfg-zt-wAW.headerTitle" = "비고";
 
-/* Class = "UINavigationItem"; title = "JustNumber"; ObjectID = "q2t-xx-Ono"; */
+/* Class = "UINavigationItem"; title = "whoau"; ObjectID = "q2t-xx-Ono"; */
 "q2t-xx-Ono.title" = "누구였지";
+
+/* Class = "UITableViewSection"; headerTitle = "Action"; ObjectID = "UqR-ti-jqN"; */
+"UqR-ti-jqN.headerTitle" = "동작";
+
+
