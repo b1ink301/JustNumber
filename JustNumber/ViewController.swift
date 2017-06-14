@@ -65,6 +65,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func actionAdd(_ sender: Any) {
+        
 
         let alertController = UIAlertController(title: "연락처 등록", message: "새 연락처 추가합니다.", preferredStyle: .alert)
         let saveAction = UIAlertAction(title: "저장", style: .destructive, handler: {
@@ -109,6 +110,11 @@ class ViewController: UIViewController {
             textField.placeholder = "Enter Name"
         }
         alertController.addTextField { (textField : UITextField!) -> Void in
+            
+            if let string = UIPasteboard.general.string {
+                textField.text = string
+            }
+            
             textField.placeholder = "Enter Phone Number"
             textField.keyboardType = .numberPad
         }

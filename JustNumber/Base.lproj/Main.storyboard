@@ -45,7 +45,7 @@
                                     <constraint firstAttribute="height" constant="667" id="YeE-3K-BbX"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="gzg-7X-wAe" kind="embed" identifier="mainSegue" id="wKa-WC-cfj"/>
+                                    <segue destination="gzg-7X-wAe" kind="embed" id="494-1r-inc"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -63,7 +63,7 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="N1s-Wm-bmE">
                             <connections>
-                                <action selector="actionAdd:" destination="E2i-mU-1nL" id="nse-8C-1dD"/>
+                                <segue destination="3Rt-Nk-nuf" kind="showDetail" id="oxg-3U-VXx"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -128,6 +128,7 @@
                         </connections>
                     </tableView>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="aBg-rY-upb">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <attributedString key="attributedTitle"/>
                         <connections>
@@ -139,7 +140,23 @@
             </objects>
             <point key="canvasLocation" x="-543.20000000000005" y="627.4362818590705"/>
         </scene>
-        <!--Detail Table View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="m44-IM-bVN">
+            <objects>
+                <navigationController id="3Rt-Nk-nuf" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="d7m-cW-kWp">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="geR-fh-EVg" kind="relationship" relationship="rootViewController" id="mK7-Yv-yps"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dor-j8-dcf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="417" y="-478"/>
+        </scene>
+        <!--등록-->
         <scene sceneID="8Ys-TU-4Yc">
             <objects>
                 <tableViewController id="geR-fh-EVg" customClass="DetailTableViewController" customModule="JustNumber" customModuleProvider="target" sceneMemberID="viewController">
@@ -298,6 +315,13 @@
                             <outlet property="delegate" destination="geR-fh-EVg" id="bH5-TB-mGw"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="등록" id="Jsn-Qi-RJm">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="6g9-CO-sVd">
+                            <connections>
+                                <action selector="actionClose:" destination="geR-fh-EVg" id="xag-RL-hR7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="memoTextView" destination="cSQ-d7-cJm" id="vcm-XI-lhF"/>
                         <outlet property="nameTextField" destination="RwK-rJ-upE" id="MS6-Lw-fXm"/>
@@ -306,8 +330,11 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1c2-Zr-5tJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="213.59999999999999" y="626.53673163418296"/>
+            <point key="canvasLocation" x="374" y="173"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="mK7-Yv-yps"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
 </document>

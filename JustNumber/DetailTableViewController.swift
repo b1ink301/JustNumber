@@ -20,13 +20,13 @@ class DetailTableViewController: UITableViewController, UITextFieldDelegate, UIT
     var newName : String?
     var newMemo : String?
     
-    var item: CKItem! {
+    var item: CKItem? {
         
         didSet {
             DispatchQueue.main.async {
-                self.nameTextField.text = self.item.name
-                self.numberLabel.text = self.item.display
-                self.memoTextView.text = self.item.memo
+                self.nameTextField.text = self.item?.name
+                self.numberLabel.text = self.item?.display
+                self.memoTextView.text = self.item?.memo
             }
         }
     }
@@ -63,6 +63,10 @@ class DetailTableViewController: UITableViewController, UITextFieldDelegate, UIT
         }
     }
     
+    @IBAction func actionClose(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
+    
     @IBAction func actionSave(_ sender: UIButton) {
         
         if self.nameTextField.isFirstResponder {
@@ -79,20 +83,20 @@ class DetailTableViewController: UITableViewController, UITextFieldDelegate, UIT
             NSLog("actionSave")
             
             if let name = self.newName {
-                self.item.name = name
+                self.item?.name = name
             }
             
             if let memo = self.newMemo {
-                self.item.memo = memo
+                self.item?.memo = memo
             }
             
-            self.completionHandler(self.item, false)
+            self.completionHandler(self.item!, false)
         }
     }
     
 
     @IBAction func actionDelete(_ sender: UIButton) {
-        self.completionHandler(self.item, true)
+        self.completionHandler(self.item!, true)
         
         self.navigationController?.popViewController(animated: true);
     }
