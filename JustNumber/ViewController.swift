@@ -38,16 +38,18 @@ class ViewController: UIViewController {
     
     func showToast(msg:String) {
         
-        let toast = UIAlertController()
-        toast.message = msg;
-        self.present(toast, animated: true)
-        
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2)) {
-            toast.dismiss(animated: true)
+        DispatchQueue.main.async {
+            let toast = UIAlertController()
+            toast.message = msg;
+            self.present(toast, animated: true)
+            
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2)) {
+                toast.dismiss(animated: true)
+            }
         }
     }
     
-    @IBAction func actionRefresh(_ sender: Any) {
+    internal func reloadExtension() {
         AppDelegate.shared.reloadExtension(completionHandler: { (error) -> Void in
             if let error = error {
                 NSLog(error.localizedDescription)
@@ -58,11 +60,12 @@ class ViewController: UIViewController {
         })
     }
     
+    @IBAction func actionRefresh(_ sender: Any) {
+        self.reloadExtension()
+    }
+    
     @IBAction func actionAdd(_ sender: Any) {
-        
-//        let spamUrl = SpamManager.shared().getSpamUrl("") as String
-//        NSLog("url = \(spamUrl)")
-        
+
         let alertController = UIAlertController(title: "연락처 등록", message: "새 연락처 추가합니다.", preferredStyle: .alert)
         let saveAction = UIAlertAction(title: "저장", style: .destructive, handler: {
             alert -> Void in
@@ -75,13 +78,13 @@ class ViewController: UIViewController {
                 
                 do {
                     let phoneNumberKit = PhoneNumberKit()
-//                    let phoneNumber = try phoneNumberKit.parse(phone, withRegion: "KR", ignoreType: true)
-                    let phoneNumber = try phoneNumberKit.parse(phone)
+                    let phoneNumber = try phoneNumberKit.parse(phone, withRegion: "KR", ignoreType: true)
+//                    let phoneNumber = try phoneNumberKit.parse(phone)
                     let display = phoneNumberKit.format(phoneNumber, toType: .international)
-                    var number = phoneNumberKit.format(phoneNumber, toType: .e164)
-                    let index = number.index(number.startIndex, offsetBy: 1)
+                    let tmp = phoneNumberKit.format(phoneNumber, toType: .e164)
+                    let index = tmp.index(tmp.startIndex, offsetBy: 1)
                     
-                    number = number.substring(from: index)
+                    let number = tmp.substring(from: index)
                     
                     NSLog("number = \(number)")
                     
@@ -90,7 +93,7 @@ class ViewController: UIViewController {
                     NSLog("number = \(number), intNumber = \(intNumber)")
                     
                     if( Storage.shared.add(name: name, display: display, number: intNumber) ){
-//                        self.mainTableViewController.reloadData()
+                        self.reloadExtension()
                     }
                 } catch let error as NSError {
                     NSLog("Fetch error: \(error) description: \(error.userInfo)")

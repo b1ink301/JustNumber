@@ -14,64 +14,57 @@ import PhoneNumberKit
 
 class ShareViewController: SLComposeServiceViewController {
 
-    var contact: CNContact?
+    var number:Int64 = 0
+    var display:String?
     
     override func isContentValid() -> Bool {
         // Do validation of contentText and/or NSExtensionContext attachments here
-        return true
+        return !self.contentText.isEmpty && self.number != 0
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-//        for item in extensionContext?.inputItems as! [NSExtensionItem] {
-//            // Iterate over items and look for an image
-//            guard let attachments = item.attachments else { continue }
-//            for itemProvider in attachments as! [NSItemProvider] {
-//                if itemProvider.hasItemConformingToTypeIdentifier("public.url") {
-//                    // This item can be represented as image, load it
-//                    itemProvider.loadItem(forTypeIdentifier: "public.url", options: nil, completionHandler: { (imageData, error) in
-//                        guard let imageData = imageData as? Data else {
-//                            return
-//                        }
-//                        // TODO: Store data in an app group to make it accessible by PDF Viewer
-//                    })
-//                }
-//            }
-//        }
-        
-//        self.title = "test"
-        
+        self.title = "ERROR"
+
         if let item = extensionContext?.inputItems.first as? NSExtensionItem {
-//            self.title = "test1"
             if let itemProvider = item.attachments?.first as? NSItemProvider {
-//                self.title = "test2"
-                
                 if itemProvider.hasItemConformingToTypeIdentifier(kUTTypeVCard as String) {
-//                    self.title = "test3"
-                    
                     itemProvider.loadItem(forTypeIdentifier: kUTTypeVCard as String, options: nil, completionHandler: { (url, error) -> Void in
                         if let data = url as? NSData {
                             do{
                                 let phoneNumberKit = PhoneNumberKit()
-                                self.contact = try CNContactVCardSerialization.contacts(with: data as Data).first!
-                                self.title = self.contact?.phoneNumbers.first?.value.stringValue
+                                let contact = try CNContactVCardSerialization.contacts(with: data as Data).first!
                                 
-//                                let phoneNumber = try phoneNumberKit.parse(self.title!)
-                                let phoneNumber = try phoneNumberKit.parse(self.title!, withRegion: "KR", ignoreType: true)
-                                self.textView.text = phoneNumberKit.format(phoneNumber, toType: .e164)
+                                let phoneNumber = try phoneNumberKit.parse((contact.phoneNumbers.first?.value.stringValue)!, withRegion: "KR", ignoreType: true)
+                                
+                                let tmp = phoneNumberKit.format(phoneNumber, toType: .e164)
+                                let index = tmp.index(tmp.startIndex, offsetBy: 1)
+                                let number = tmp.substring(from: index)
+                                
+                                self.display = phoneNumberKit.format(phoneNumber, toType: .international)
+                                self.number = NumberFormatter().number(from: number)!.int64Value
+                                
+                                self.editConfigurationItem.title = self.display
+                                
+                                self.title = "누구였지"
+                                
                             } catch {
-                                self.title = "error"
+                                self.title = "ERROR #1"
                             }
                         }
                     })
                 }
             }
         }
-
     }
     
+    func finish() {
+        self.number = 0;
+        self.display = nil
+        
+        self.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
+    }
     
     override func didSelectPost() {
         // This is called after the user selects Post. Do the upload of contentText and/or NSExtensionContext attachments.
@@ -97,21 +90,23 @@ class ShareViewController: SLComposeServiceViewController {
 //        
 //        extensionContext?.cancelRequest(withError: {} as! Error)
         
-        if (self.contact != nil) {
-            self.extensionContext!.completeRequest(returningItems: [], completionHandler: nil)
-        } else {
-            extensionContext?.cancelRequest(withError: {} as! Error)
+        var isSuccessed = false
+        if let name = self.contentText, let display = self.display {
+            isSuccessed = Storage.shared.add(name: name, display: display, number: self.number)
         }
-        
-        
+
+        let alert = UIAlertController(title:self.title, message: isSuccessed ? "성공" : "실패", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default) { _ in self.finish() })
+        self.present(alert, animated: true, completion: nil)
+
     }
 
     lazy var editConfigurationItem: SLComposeSheetConfigurationItem = {
         let item = SLComposeSheetConfigurationItem()!
         
-        item.title = "연락처 등록"
-        item.value = "등록"
-        item.tapHandler = self.didSelectPost
+        item.title = "전화번호"
+//        item.value = "등록"
+//        item.tapHandler = self.didSelectPost
         
         return item
     }()
@@ -120,7 +115,7 @@ class ShareViewController: SLComposeServiceViewController {
         // To add configuration options via table cells at the bottom of the sheet, return an array of SLComposeSheetConfigurationItem here.
         
         
-        return []
+        return [editConfigurationItem]
     }
 
 }

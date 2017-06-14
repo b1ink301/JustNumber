@@ -26,6 +26,7 @@ class DataSource: NSObject, UITableViewDataSource {
     
     init(tableView: UITableView) {
         self.tableView = tableView
+        
     }
     
     func objectAtIndexPath(_ indexPath: IndexPath) -> NSManagedObject {

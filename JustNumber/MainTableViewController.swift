@@ -21,13 +21,70 @@ class MainTableViewController: UITableViewController, NSFetchedResultsController
         super.viewDidLoad()
         
         tableView.dataSource = dataSource
+        
+//        if let managedObjectContext = dataSource.managedObjectContext {
+//            // Add Observer
+//            let notificationCenter = NotificationCenter.default
+//            notificationCenter.addObserver(self, selector: #selector(managedObjectContextObjectsDidChange), name: NSNotification.Name.NSManagedObjectContextObjectsDidChange, object:managedObjectContext)
+//        }
     }
+    
+    internal func reloadExtension() {
+        let parent:ViewController = self.parent as! ViewController
+        parent.reloadExtension()
+    }
+
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+//        NotificationCenter.default.removeObserver(self);
+    }
+    
+    // MARK: - Notification Handling
+    
+    internal func managedObjectContextObjectsDidChange(notification: NSNotification) {
+        guard let userInfo = notification.userInfo else { return }
+        
+        if let inserts = userInfo[NSInsertedObjectsKey] as? Set<NSManagedObject>, inserts.count > 0 {
+            print("--- INSERTS ---")
+            print(inserts)
+            print("+++++++++++++++")
+            
+//            reloadExtension()
+        }
+        
+        if let updates = userInfo[NSUpdatedObjectsKey] as? Set<NSManagedObject>, updates.count > 0 {
+            print("--- UPDATES ---")
+            for update in updates {
+                print(update.changedValues())
+            }
+            print("+++++++++++++++")
+            
+            
+//            reloadExtension()
+        }
+        
+        if let deletes = userInfo[NSDeletedObjectsKey] as? Set<NSManagedObject>, deletes.count > 0 {
+            print("--- DELETES ---")
+            print(deletes)
+            print("+++++++++++++++")
+            
+//            reloadExtension()
+        }
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
+    @IBAction func actionRefresh(_ sender: UIRefreshControl) {
+        
+//        self.tableView.reloadData()
+        tableView.reloadData()
+        
+        sender.endRefreshing()
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == ViewController.detailSegue {
@@ -42,11 +99,14 @@ class MainTableViewController: UITableViewController, NSFetchedResultsController
                 if isDeleted {
                     if self.dataSource.delete(item: item){
                         NSLog("Delete...")
+                        self.reloadExtension()
                     }
                 }
                 else {
                     if Storage.shared.update(data: data){
                         NSLog("Updated...")
+                        
+                        self.reloadExtension()
                     }
                 }
             }
