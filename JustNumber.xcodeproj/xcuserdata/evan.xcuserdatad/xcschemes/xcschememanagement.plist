@@ -14,6 +14,11 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>ShareLink.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
+		</dict>
 		<key>share.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -23,6 +28,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>20250D141EDBBFBA002CEF0C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>20476AF21EEFD5F400C176EC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

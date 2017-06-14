@@ -128,7 +128,7 @@ struct Storage {
         item.setValue(name, forKey: #keyPath(CKItem.name))
         item.setValue(display, forKey: #keyPath(CKItem.display))
         item.setValue(number, forKey: #keyPath(CKItem.number))
-        item.setValue(Date(), forKey: #keyPath(CKItem.created_date))
+        item.setValue(NSDate(), forKey: #keyPath(CKItem.created_date))
         
         return save() == .saved
     }
