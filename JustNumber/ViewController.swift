@@ -13,11 +13,11 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var containerView: UIView!
     
-    static let mainSegue = "mainSegue"
-    static let detailSegue = "DetailSegue"
+    static let MainSegue = "MainSegue"
+    static let AddOrDetailSegue = "AddOrDetailSegue"
+    static let DetailSegue = "DetailSegue"
     
     var mainTableViewController: MainTableViewController!
-//    var detailTableViewController: DetailTableViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,21 +30,17 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == ViewController.mainSegue {
+        if segue.identifier == ViewController.MainSegue {
             mainTableViewController = segue.destination as! MainTableViewController
         }
-        
-    }
-    
-    func showToast(msg:String) {
-        
-        DispatchQueue.main.async {
-            let toast = UIAlertController()
-            toast.message = msg;
-            self.present(toast, animated: true)
+        else if segue.identifier == ViewController.AddOrDetailSegue {
             
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2)) {
-                toast.dismiss(animated: true)
+            guard let destinationController = segue.destination as? AddOrDetailViewController else { return }
+            destinationController.completionHandler = { (data, status) -> Void in
+                if status == .Insert {
+                    NSLog("Insert...")
+                    self.reloadExtension()
+                }
             }
         }
     }
@@ -55,7 +51,8 @@ class ViewController: UIViewController {
                 NSLog(error.localizedDescription)
             }
             else{
-                self.showToast(msg: "Successed fetching data from CoreData")
+                let parent = self.navigationController as! BaseNaviagtionContoller
+                parent.showToast(msg: "Successed fetching data from CoreData")
             }
         })
     }
@@ -77,28 +74,7 @@ class ViewController: UIViewController {
             if let name = firstTextField.text, let phone = secondTextField.text {
                 NSLog("name = \(name), phone = \(phone)")
                 
-                do {
-                    let phoneNumberKit = PhoneNumberKit()
-                    let phoneNumber = try phoneNumberKit.parse(phone, withRegion: "KR", ignoreType: true)
-//                    let phoneNumber = try phoneNumberKit.parse(phone)
-                    let display = phoneNumberKit.format(phoneNumber, toType: .international)
-                    let tmp = phoneNumberKit.format(phoneNumber, toType: .e164)
-                    let index = tmp.index(tmp.startIndex, offsetBy: 1)
-                    
-                    let number = tmp.substring(from: index)
-                    
-                    NSLog("number = \(number)")
-                    
-                    let intNumber = NumberFormatter().number(from: number)!.int64Value
-                    
-                    NSLog("number = \(number), intNumber = \(intNumber)")
-                    
-                    if( Storage.shared.add(name: name, display: display, number: intNumber) ){
-                        self.reloadExtension()
-                    }
-                } catch let error as NSError {
-                    NSLog("Fetch error: \(error) description: \(error.userInfo)")
-                }
+                
             }
         })
         
