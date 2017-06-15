@@ -87,26 +87,32 @@ class MainTableViewController: UITableViewController, NSFetchedResultsController
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == ViewController.detailSegue {
-            guard let destinationController = segue.destination as? DetailTableViewController, let indexPath = tableView.indexPathForSelectedRow else { return }
+        if segue.identifier == ViewController.DetailSegue {
+            guard let destinationController = segue.destination as? AddOrDetailViewController, let indexPath = tableView.indexPathForSelectedRow else { return }
 
-            destinationController.title = "Detail"
+            destinationController.title = "상세"
             
             let item = dataSource.objectAtIndexPath(indexPath) as! CKItem
-            destinationController.item = item
             
-            destinationController.completionHandler = { (data, isDeleted) -> Void in
-                if isDeleted {
-                    if self.dataSource.delete(item: item){
-                        NSLog("Delete...")
-                        self.reloadExtension()
-                    }
-                }
-                else {
-                    if Storage.shared.update(data: data){
-                        NSLog("Updated...")
-                        
-                        self.reloadExtension()
+            destinationController.item = item
+            destinationController.navigationItem.rightBarButtonItem = nil
+            
+            destinationController.completionHandler = { (data, status) -> Void in
+                
+                if data is CKItem {
+                    switch status {
+                    case .Delete:
+                        if self.dataSource.delete(item: item){
+                            NSLog("Delete...")
+                            self.reloadExtension()
+                        }
+                    case .Update:
+                        if Storage.shared.update(data: data as! CKItem){
+                            NSLog("Updated...")
+                            
+                            self.reloadExtension()
+                        }
+                    default: break
                     }
                 }
             }

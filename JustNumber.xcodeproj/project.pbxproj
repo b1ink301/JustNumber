@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		200D93F31EEA2F0300A65A24 /* PhoneNumberKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20CD5DEE1EE950F500AB48B4 /* PhoneNumberKit.framework */; };
 		200D93F51EEA40FC00A65A24 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200D93F41EEA40FC00A65A24 /* DetailTableViewController.swift */; };
 		200D94021EEA8E5F00A65A24 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 200D94041EEA8E5F00A65A24 /* InfoPlist.strings */; };
 		200F5B831EEF7455002FE82C /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200F5B821EEF7455002FE82C /* DataSource.swift */; };
@@ -16,6 +15,12 @@
 		20250D1C1EDBBFBB002CEF0C /* IntentsExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 20250D151EDBBFBA002CEF0C /* IntentsExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		20476AF61EEFD5F500C176EC /* RequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20476AF51EEFD5F500C176EC /* RequestHandler.swift */; };
 		20556B8F1EEE2884001B82D3 /* SpamManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 20556B8E1EEE2884001B82D3 /* SpamManager.m */; };
+		205591EC1EF20E7100B53452 /* PhoneNumberKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20CD5DEE1EE950F500AB48B4 /* PhoneNumberKit.framework */; };
+		205591EE1EF20E7500B53452 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205591ED1EF20E7500B53452 /* Realm.framework */; };
+		205591F01EF20E7800B53452 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205591EF1EF20E7800B53452 /* RealmSwift.framework */; };
+		205591F21EF2131B00B53452 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205591F11EF2131B00B53452 /* Utils.swift */; };
+		205591F41EF2179A00B53452 /* AddOrDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205591F31EF2179A00B53452 /* AddOrDetailViewController.swift */; };
+		205591F61EF22A6700B53452 /* BaseNaviagtionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205591F51EF22A6700B53452 /* BaseNaviagtionController.swift */; };
 		206D21881EEFE1E100B551DA /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FD71041EE7FC4B009B1818 /* PersistentContainer.swift */; };
 		206D21891EEFE1E700B551DA /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CEF7D01EE7F431009B5685 /* Storage.swift */; };
 		206D218A1EEFE1ED00B551DA /* CKModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2085E9DC1ED3F7F90067D65D /* CKModel.xcdatamodeld */; };
@@ -95,6 +100,11 @@
 		20476AF71EEFD5F500C176EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20556B8D1EEE2884001B82D3 /* JustNumber-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JustNumber-Bridging-Header.h"; sourceTree = "<group>"; };
 		20556B8E1EEE2884001B82D3 /* SpamManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpamManager.m; sourceTree = "<group>"; };
+		205591ED1EF20E7500B53452 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
+		205591EF1EF20E7800B53452 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
+		205591F11EF2131B00B53452 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		205591F31EF2179A00B53452 /* AddOrDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOrDetailViewController.swift; sourceTree = "<group>"; };
+		205591F51EF22A6700B53452 /* BaseNaviagtionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNaviagtionController.swift; sourceTree = "<group>"; };
 		2085E9DD1ED3F7F90067D65D /* CKModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CKModel.xcdatamodel; sourceTree = "<group>"; };
 		2085EA5F1ED40F950067D65D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		20A4F0E71EE13B9F0021A4C2 /* JustNumber.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = JustNumber.entitlements; sourceTree = "<group>"; };
@@ -144,7 +154,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				200D93F31EEA2F0300A65A24 /* PhoneNumberKit.framework in Frameworks */,
+				205591EC1EF20E7100B53452 /* PhoneNumberKit.framework in Frameworks */,
+				205591EE1EF20E7500B53452 /* Realm.framework in Frameworks */,
+				205591F01EF20E7800B53452 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +210,8 @@
 		2085EA5E1ED40F950067D65D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				205591EF1EF20E7800B53452 /* RealmSwift.framework */,
+				205591ED1EF20E7500B53452 /* Realm.framework */,
 				20CD5DEE1EE950F500AB48B4 /* PhoneNumberKit.framework */,
 				20CD5DEC1EE950D000AB48B4 /* iOS */,
 				20CD5DEA1EE94AC800AB48B4 /* Contacts.framework */,
@@ -251,6 +265,9 @@
 				20556B8D1EEE2884001B82D3 /* JustNumber-Bridging-Header.h */,
 				200F5B821EEF7455002FE82C /* DataSource.swift */,
 				200F5B841EEF74FE002FE82C /* MainFetchedResultsController.swift */,
+				205591F11EF2131B00B53452 /* Utils.swift */,
+				205591F31EF2179A00B53452 /* AddOrDetailViewController.swift */,
+				205591F51EF22A6700B53452 /* BaseNaviagtionController.swift */,
 			);
 			path = JustNumber;
 			sourceTree = "<group>";
@@ -542,6 +559,8 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/PhoneNumberKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
 			);
 			outputPaths = (
 			);
@@ -589,8 +608,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				205591F61EF22A6700B53452 /* BaseNaviagtionController.swift in Sources */,
 				20556B8F1EEE2884001B82D3 /* SpamManager.m in Sources */,
 				200D93F51EEA40FC00A65A24 /* DetailTableViewController.swift in Sources */,
+				205591F41EF2179A00B53452 /* AddOrDetailViewController.swift in Sources */,
 				2085E9DE1ED3F7F90067D65D /* CKModel.xcdatamodeld in Sources */,
 				200F5B831EEF7455002FE82C /* DataSource.swift in Sources */,
 				20CD5DD61EE8FB6500AB48B4 /* Storage.swift in Sources */,
@@ -598,6 +619,7 @@
 				20CD5DD71EE9106C00AB48B4 /* PersistentContainer.swift in Sources */,
 				20B12E951ED2CE2600521CD2 /* ViewController.swift in Sources */,
 				20B12E931ED2CE2600521CD2 /* AppDelegate.swift in Sources */,
+				205591F21EF2131B00B53452 /* Utils.swift in Sources */,
 				20B12EC31ED3D19100521CD2 /* MainTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

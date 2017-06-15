@@ -120,7 +120,21 @@ struct Storage {
         return .hasNoChanges
     }
     
-    mutating func add(name:String, display:String, number:Int64) -> Bool {
+    mutating func add(data:CKItem) -> Bool {
+        let entity = NSEntityDescription.entity(forEntityName: Storage.entityName, in: context)
+        let item = NSManagedObject(entity: entity!, insertInto: context)
+        
+        //set the entity values
+        item.setValue(data.name, forKey: #keyPath(CKItem.name))
+        item.setValue(data.display, forKey: #keyPath(CKItem.display))
+        item.setValue(data.number, forKey: #keyPath(CKItem.number))
+        item.setValue(NSDate(), forKey: #keyPath(CKItem.created_date))
+        
+        return save() == .saved
+    }
+
+    
+    mutating func add(name:String, display:String, number:Int64, memo:String) -> Bool {
         let entity = NSEntityDescription.entity(forEntityName: Storage.entityName, in: context)
         let item = NSManagedObject(entity: entity!, insertInto: context)
         
@@ -128,6 +142,7 @@ struct Storage {
         item.setValue(name, forKey: #keyPath(CKItem.name))
         item.setValue(display, forKey: #keyPath(CKItem.display))
         item.setValue(number, forKey: #keyPath(CKItem.number))
+        item.setValue(memo, forKey: #keyPath(CKItem.memo))
         item.setValue(NSDate(), forKey: #keyPath(CKItem.created_date))
         
         return save() == .saved
