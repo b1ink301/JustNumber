@@ -1,2 +1,3 @@
 github "marmelroy/PhoneNumberKit"
 github "realm/realm-cocoa"
+github "SyncDB/Sync" ~> 3.0

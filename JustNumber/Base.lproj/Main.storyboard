@@ -167,7 +167,7 @@
                         <sections>
                             <tableViewSection headerTitle="Info" id="Ogf-xq-XJP">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="YdC-iq-o3j">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="YdC-iq-o3j">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YdC-iq-o3j" id="1YE-lh-PZ8">
@@ -213,7 +213,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Memo" id="Sfg-zt-wAW">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="15" rowHeight="84" id="BTB-b3-8e7">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="15" rowHeight="84" id="BTB-b3-8e7">
                                         <rect key="frame" x="0.0" y="199.5" width="375" height="84"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BTB-b3-8e7" id="f0O-KN-1Y5">

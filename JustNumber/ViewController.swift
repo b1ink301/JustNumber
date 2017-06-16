@@ -47,11 +47,14 @@ class ViewController: UIViewController {
     
     internal func reloadExtension() {
         AppDelegate.shared.reloadExtension(completionHandler: { (error) -> Void in
+            let parent = self.navigationController as! BaseNaviagtionContoller
+            
             if let error = error {
                 NSLog(error.localizedDescription)
+                parent.showToast(msg: error.localizedDescription)
             }
             else{
-                let parent = self.navigationController as! BaseNaviagtionContoller
+                
                 parent.showToast(msg: "Successed fetching data from CoreData")
             }
         })
