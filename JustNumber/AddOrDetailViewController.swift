@@ -125,18 +125,24 @@ class AddOrDetailViewController: UITableViewController, UITextFieldDelegate, UIT
         if self.deleteCell.isHidden {
             // Insert Item
             
-            status = .Insert
-            
             let data = Utils.makeItem(phone: self.numberTextField.text!)
             
             guard data != nil else {
                 let parent = self.navigationController as! BaseNaviagtionContoller
                 parent.showToast(msg: "전화 번호를 확인해 주세요.")
+                self.numberTextField.becomeFirstResponder()
+                return
+            }
+            
+            guard !Storage.shared.hasNumber(number: data!.number) else {
+                let parent = self.navigationController as! BaseNaviagtionContoller
+                parent.showToast(msg: "이미 등롣된 번호입니다.")
+                self.numberTextField.becomeFirstResponder()
                 return
             }
             
             if Storage.shared.add(name: self.nameTextField.text!, display: data!.display, number: data!.number, memo: self.memoTextView.text!) {
-                self.completionHandler(NSObject(), status)
+                self.completionHandler(NSObject(), .Insert)
                 self.dismiss(animated: true) 
             }
             else {

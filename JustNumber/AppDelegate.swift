@@ -8,6 +8,7 @@
 
 import UIKit
 import CallKit
+import Realm
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate{
@@ -26,6 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
 //        providerDelegate = ProviderDelegate(callManager: callManager)
         
         // Override point for customization after application launch.
+        
+        initRealm()
+        
         return true
     }
     
@@ -36,7 +40,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         NSLog("Open url: \(url)")
         
+        
         return true
+    }
+    
+    func initRealm(){
+        
+        let fileURL = FileManager.default
+            .containerURL(forSecurityApplicationGroupIdentifier: Constants.AppGroupID)!
+            .appendingPathComponent("Library/Caches/default.realm")
+        
+        NSLog("fileURL = \(fileURL)")
+        
+
+        
+//        let config = Realm.Configuration(
+//            // Get the URL to the bundled file
+//            fileURL: Bundle.main.url(forResource: "MyBundledData", withExtension: "realm"),
+//            // Open the file in read-only mode as application bundles are not writeable
+//            readOnly: true)
+//        
+//        // Open the Realm with the configuration
+//        let realm = try! Realm(configuration: config)
     }
     
 //    func applicationWillResignActive(_ application: UIApplication) {

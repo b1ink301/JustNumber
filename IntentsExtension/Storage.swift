@@ -148,6 +148,25 @@ struct Storage {
         return save() == .saved
     }
     
+    mutating func hasNumber(number:Int64) -> Bool {
+        
+        do {
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Storage.entityName)
+            fetchRequest.predicate = NSPredicate(format: "number = %d", number)
+            
+            let searchResults = try context.fetch(fetchRequest)
+            
+            return searchResults.count > 0
+            
+        } catch {
+            print("Error with request: \(error)")
+        }
+        
+        
+        return false
+    }
+
+    
     mutating func update(data:CKItem) -> Bool {
         
         let fetchRequest: NSFetchRequest<CKItem> = CKItem.fetchRequest()
