@@ -71,7 +71,7 @@ class DataSource: NSObject, UITableViewDataSource {
         
         let item = fetchedResultsController.object(at: indexPath) as! NSManagedObject
         
-        delete(item: item)
+        let _ = delete(item: item)
     }
     
 }

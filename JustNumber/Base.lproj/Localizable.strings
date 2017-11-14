@@ -1,0 +1,15 @@
+/* 
+  Strings.strings
+  JustNumber
+
+  Created by evan on 2017. 11. 13..
+  Copyright © 2017년 evan. All rights reserved.
+*/
+
+"meta_name_hint" = "Name";
+"meta_phone_hint" = "Phone Number";
+"meta_save" = "Save";
+"meta_delete" = "Delete";
+"meta_reg" = "Registration";
+"meta_main_title" = "whoau";
+"meta_detail_title" = "Detail";

@@ -61,7 +61,6 @@
 }
 
 - (char *)AES128EncryptWithKey:(NSString *)key withData:(NSData*)data{
-    
         NSLog(@"whoau: %s", __FUNCTION__);
         
         // 'key' should be 32 bytes for AES256,
@@ -128,7 +127,7 @@
     return result;
 }
 
-- (NSString *)getSpamUrl:(NSString *)number {
+- (NSURLRequest *)getReguestWithNumber:(NSString *)number {
     NSLog(@"whoau: %s", __FUNCTION__);
     
     NSString* dst = [self encrypt:[self phoneNumber]];
@@ -147,13 +146,13 @@
     
     NSLog(@"whoau: urlStringd: %@", urlString);
     
-//    NSURL *url = [NSURL URLWithString:urlString];
-//    NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:10];
-//    [urlRequest setHTTPMethod:@"GET"];
-//    [urlRequest setValue:@"Dalvik/1.6.0 (Linux; U; Android 4.1.2; IM-A870S Build/JZO54K)" forHTTPHeaderField: @"User-Agent"];
-//    [urlRequest setValue:@"application/x-www-form-urlencoded; charset=UTF-8" forHTTPHeaderField: @"Content-Type"];
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:10];
+    [urlRequest setHTTPMethod:@"GET"];
+    [urlRequest setValue:@"Dalvik/1.6.0 (Linux; U; Android 7.1.2; IM-A870S Build/JZO54K)" forHTTPHeaderField: @"User-Agent"];
+    [urlRequest setValue:@"application/x-www-form-urlencoded; charset=UTF-8" forHTTPHeaderField: @"Content-Type"];
     
-    return urlString;
+    return urlRequest;
 }
 
 
@@ -177,20 +176,19 @@
 //    9 = "대리운전";
 //	0 = "기타 유형 스팸";
 
-//-(NSString*)json2StringWithAddress:(NSString*)address{
-//    
-//    _request = [self createRequestForNumber:address];
-//    
-//    NSError *error = nil;
-//    NSHTTPURLResponse *httpResponse;
-//    NSData *data = [NSURLConnection sendSynchronousRequest:_request returningResponse:&httpResponse error:&error];
+-(void)search:(NSString*)address completionHandler:(void (^)(NSData * __nullable data, NSURLResponse * __nullable response, NSError * __nullable error))handler {
+    
+    NSURLRequest* request = [self getReguestWithNumber:address];
+    [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:handler] resume];
+    
+//    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&httpResponse error:&error];
 //    NSString *caller = @"알수없음";
-//    
+//
 //    if([data length] > 0 && error==nil && [httpResponse statusCode]==200) {
-//        
+//
 //        NSError *localError = nil;
 //        NSDictionary *parsedObject = [NSJSONSerialization JSONObjectWithData:data options:0 error:&localError];
-//        
+//
 //        if(localError!=nil){
 //            NSLog(@"whoau: Lookup request localError: %@", localError);
 //            caller = @"알수없음 (에러#1)";
@@ -200,28 +198,28 @@
 //            NSString* type = [parsedObject objectForKey:@"O_BUSI_NM"];
 //            NSString* region = [parsedObject objectForKey:@"O_ADDR_NM"];
 //            NSString* spams = [parsedObject objectForKey:@"O_SCH_SPAM"];
-//            
+//
 //            parsedObject = [NSJSONSerialization JSONObjectWithData:[spams dataUsingEncoding:NSUTF8StringEncoding] options:0 error:&localError];
-//            
+//
 //            NSString* total_spam_count = [parsedObject objectForKey:@"TOTALCOUNT"];
 //            NSMutableArray *jsonArray = [parsedObject objectForKey:@"VALUES"];
-//            
+//
 //            NSLog(@"whoau: Lookup request returned: %@, %@, %@, %@", name, type, region, total_spam_count);
-//            
+//
 //            if(name!=nil && [name length]>0){
 //                caller = name;
 //            }
 //            else{
-//                
+//
 //                if(jsonArray!=nil && [jsonArray count]>0){
-//                    
+//
 //                    NSString* code_name;
 //                    NSInteger code = -1;
 //                    for(NSDictionary *item in jsonArray) {
 //                        code = [[item objectForKey:@"CODE"] intValue];
 //                        break;
 //                    }
-//                    
+//
 //                    switch (code) {
 //                        case 1: code_name = @"대출권유 스팸"; break;
 //                        case 2: code_name = @"텔레마케팅 스팸"; break;
@@ -234,28 +232,28 @@
 //                        case 9: code_name = @"대리운전 스팸"; break;
 //                        default: code_name = @"기타유형 스팸"; break;
 //                    }
-//                    
+//
 //                    caller = code_name;
 //                }
 //            }
-//            
+//
 //            [self addCallLogWithName:caller type:type region:region address:address];
-//            
+//
 //            if([total_spam_count length]>0)
 //                caller = [NSString stringWithFormat:@"%@ (신고건수:%@건)", caller, total_spam_count];
-//            
+//
 //        }
 //    }
-//    
+//
 //    if (error != nil) {
 //        NSLog(@"whoau: Lookup request errored: %@", error);
 //        caller = @"알수없음 (에러#2)";
 //    }
-//    
+//
 //    [self clear];
-//    
+//
 //    return caller;
-//}
+}
 //
 //-(void)processCallLog:(NSMutableDictionary*)dic{
 //    if ([[NSBundle mainBundle].bundleIdentifier isEqualToString:InCallServiceIdentifier]){

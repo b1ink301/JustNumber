@@ -77,7 +77,6 @@ class ViewController: UIViewController {
             if let name = firstTextField.text, let phone = secondTextField.text {
                 NSLog("name = \(name), phone = \(phone)")
                 
-                
             }
         })
         
