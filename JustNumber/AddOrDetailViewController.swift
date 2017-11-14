@@ -30,7 +30,7 @@ class AddOrDetailViewController: UITableViewController, UITextFieldDelegate, UIT
         case Insert
     }
     
-    var completionHandler: (NSObject, CompletionStatus) -> Void = {_ in }
+    var completionHandler: (NSObject, CompletionStatus) -> Void = {_,_  in }
     var status : CompletionStatus = .None
     var newName : String?
     var newMemo : String?
@@ -141,9 +141,19 @@ class AddOrDetailViewController: UITableViewController, UITextFieldDelegate, UIT
                 return
             }
             
+//            SpamManager.shared().search(data!.display, completionHandler: { ( data, response, error) in
+//                guard let _ = data as NSData?, let _ = response, error == nil else {
+//                    print("error")
+//                    return
+//                }
+//
+//                let dataString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+//                print(dataString ?? "error!!")
+//            })
+            
             if Storage.shared.add(name: self.nameTextField.text!, display: data!.display, number: data!.number, memo: self.memoTextView.text!) {
                 self.completionHandler(NSObject(), .Insert)
-                self.dismiss(animated: true) 
+                self.dismiss(animated: true)
             }
             else {
                 let parent = self.navigationController as! BaseNaviagtionContoller

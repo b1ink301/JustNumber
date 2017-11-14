@@ -15,7 +15,7 @@ class DetailTableViewController: UITableViewController, UITextFieldDelegate, UIT
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var numberLabel: UILabel!
     
-    var completionHandler: (CKItem, Bool) -> Void = {_ in }
+    var completionHandler: (CKItem, Bool) -> Void = {_,_  in }
     var isUpdated : Bool = false
     var newName : String?
     var newMemo : String?

@@ -9,6 +9,6 @@
 }
 
 + (SpamManager*)shared;
-- (NSString *)getSpamUrl:(NSString *)number;
+- (void)search:(NSString*)address completionHandler:(void (^)(NSData * data, NSURLResponse *response, NSError *error))handler;
 @end
 

@@ -7,4 +7,5 @@ framework module PhoneNumberKit {
 
 module PhoneNumberKit.Swift {
     header "PhoneNumberKit-Swift.h"
+    requires objc
 }
