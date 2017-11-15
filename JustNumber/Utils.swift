@@ -17,8 +17,8 @@ class Utils {
             let display = phoneNumberKit.format(phoneNumber, toType: .international)
             let tmp = phoneNumberKit.format(phoneNumber, toType: .e164)
             let index = tmp.index(tmp.startIndex, offsetBy: 1)
-            let number = tmp.substring(from: index)
-            let intNumber = NumberFormatter().number(from: number)!.int64Value
+            let number = tmp[..<index]
+            let intNumber = NumberFormatter().number(from: String(number))!.int64Value
             
             NSLog("number = \(number), intNumber = \(intNumber)")
             
