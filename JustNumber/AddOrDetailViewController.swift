@@ -30,7 +30,7 @@ class AddOrDetailViewController: UITableViewController, UITextFieldDelegate, UIT
         case Insert
     }
     
-    var completionHandler: (NSObject, CompletionStatus) -> Void = {_,_  in }
+    var completionHandler: (NSObject, CompletionStatus) -> Void = { _,_  in }
     var status : CompletionStatus = .None
     var newName : String?
     var newMemo : String?
@@ -68,7 +68,6 @@ class AddOrDetailViewController: UITableViewController, UITextFieldDelegate, UIT
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     }
@@ -154,14 +153,11 @@ class AddOrDetailViewController: UITableViewController, UITextFieldDelegate, UIT
             if Storage.shared.add(name: self.nameTextField.text!, display: data!.display, number: data!.number, memo: self.memoTextView.text!) {
                 self.completionHandler(NSObject(), .Insert)
                 self.dismiss(animated: true)
-            }
-            else {
+            } else {
                 let parent = self.navigationController as! BaseNaviagtionContoller
                 parent.showToast(msg: "에러가 발생했습니다.")
             }
-            
-        }
-        else {
+        } else {
             if status == .Update {
                 NSLog("actionSave Update")
                 
@@ -177,7 +173,6 @@ class AddOrDetailViewController: UITableViewController, UITextFieldDelegate, UIT
             }
         }
     }
-    
     
     @IBAction func actionDelete(_ sender: UIButton) {
         self.completionHandler(self.item!, .Delete)

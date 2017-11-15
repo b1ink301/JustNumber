@@ -26,7 +26,6 @@ class DataSource: NSObject, UITableViewDataSource {
     
     init(tableView: UITableView) {
         self.tableView = tableView
-        
     }
     
     func objectAtIndexPath(_ indexPath: IndexPath) -> NSManagedObject {
@@ -34,7 +33,6 @@ class DataSource: NSObject, UITableViewDataSource {
     }
     
     // MARK: - UITableViewDataSource
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return fetchedResultsController.sections?.count ?? 0
     }
@@ -61,6 +59,7 @@ class DataSource: NSObject, UITableViewDataSource {
         return cell
     }
     
+    @discardableResult
     func delete(item : NSManagedObject) -> Bool {
         managedObjectContext.delete(item)
         
@@ -71,7 +70,7 @@ class DataSource: NSObject, UITableViewDataSource {
         
         let item = fetchedResultsController.object(at: indexPath) as! NSManagedObject
         
-        let _ = delete(item: item)
+        delete(item: item)
     }
     
 }

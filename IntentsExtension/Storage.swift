@@ -105,6 +105,7 @@ struct Storage {
         }
     }
     
+    @discardableResult
     mutating func save() -> SaveStatus {
         NSLog("CoreData: save")
         

@@ -76,7 +76,6 @@ class DetailTableViewController: UITableViewController, UITextFieldDelegate, UIT
             self.memoTextView.resignFirstResponder()
         }
         
-        
         if isUpdated {
             isUpdated = false
             
