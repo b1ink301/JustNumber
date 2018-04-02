@@ -24,14 +24,14 @@ class AddOrDetailViewController: UITableViewController, UITextFieldDelegate, UIT
     @IBOutlet weak var deleteCell: UITableViewCell!
     
     enum CompletionStatus : Int {
-        case None
-        case Update
-        case Delete
-        case Insert
+        case none
+        case update
+        case delete
+        case insert
     }
     
     var completionHandler: (NSObject, CompletionStatus) -> Void = { _,_  in }
-    var status : CompletionStatus = .None
+    var status : CompletionStatus = .none
     var newName : String?
     var newMemo : String?
     
@@ -75,7 +75,7 @@ class AddOrDetailViewController: UITableViewController, UITextFieldDelegate, UIT
     func textFieldDidEndEditing(_ textField: UITextField) {
         
         if self.nameTextField == textField {
-            status = .Update
+            status = .update
             self.newName = textField.text
         }
     }
@@ -83,7 +83,7 @@ class AddOrDetailViewController: UITableViewController, UITextFieldDelegate, UIT
     func textViewDidEndEditing(_ textView: UITextView) {
         
         if self.memoTextView == textView {
-            status = .Update
+            status = .update
             self.newMemo = textView.text
         }
     }
@@ -140,26 +140,16 @@ class AddOrDetailViewController: UITableViewController, UITextFieldDelegate, UIT
                 return
             }
             
-//            SpamManager.shared().search(data!.display, completionHandler: { ( data, response, error) in
-//                guard let _ = data as NSData?, let _ = response, error == nil else {
-//                    print("error")
-//                    return
-//                }
-//
-//                let dataString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-//                print(dataString ?? "error!!")
-//            })
-            
             if Storage.shared.add(name: self.nameTextField.text!, display: data!.display, number: data!.number, memo: self.memoTextView.text!) {
-                self.completionHandler(NSObject(), .Insert)
+                self.completionHandler(NSObject(), .insert)
                 self.dismiss(animated: true)
             } else {
                 let parent = self.navigationController as! BaseNaviagtionContoller
                 parent.showToast(msg: "에러가 발생했습니다.")
             }
         } else {
-            if status == .Update {
-                NSLog("actionSave Update")
+            if status == .update {
+                debugPrint("actionSave Update")
                 
                 if let name = self.newName {
                     self.item?.name = name
@@ -175,7 +165,7 @@ class AddOrDetailViewController: UITableViewController, UITextFieldDelegate, UIT
     }
     
     @IBAction func actionDelete(_ sender: UIButton) {
-        self.completionHandler(self.item!, .Delete)
+        self.completionHandler(self.item!, .delete)
         
         self.navigationController?.popViewController(animated: true);
     }

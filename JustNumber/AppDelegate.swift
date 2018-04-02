@@ -34,8 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
-        NSLog("Open url: \(url)")
-        
+        debugPrint("Open url: \(url)")
         
         return true
     }
@@ -45,7 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
             .containerURL(forSecurityApplicationGroupIdentifier: Constants.AppGroupID)!
             .appendingPathComponent("Library/Caches/default.realm")
         
-        NSLog("fileURL = \(fileURL)")
+        debugPrint("fileURL = \(fileURL)")
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

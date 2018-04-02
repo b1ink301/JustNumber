@@ -33,17 +33,22 @@ class ShareViewController: SLComposeServiceViewController {
                     itemProvider.loadItem(forTypeIdentifier: kUTTypeVCard as String, options: nil, completionHandler: { (url, error) -> Void in
                         if let data = url as? NSData {
                             do{
-                                let phoneNumberKit = PhoneNumberKit()
+//                                let phoneNumberKit = PhoneNumberKit()
                                 let contact = try CNContactVCardSerialization.contacts(with: data as Data).first!
                                 
-                                let phoneNumber = try phoneNumberKit.parse((contact.phoneNumbers.first?.value.stringValue)!, withRegion: "KR", ignoreType: true)
+                                if let phoneNumber = contact.phoneNumbers.first?.value.stringValue, let data = Utils.makeItem(phone: phoneNumber) {
+                                    self.display = data.display
+                                    self.number = data.number
+                                }
                                 
-                                let tmp = phoneNumberKit.format(phoneNumber, toType: .e164)
-                                let index = tmp.index(tmp.startIndex, offsetBy: 1)
-                                let number = tmp.substring(from: index)
-                                
-                                self.display = phoneNumberKit.format(phoneNumber, toType: .international)
-                                self.number = NumberFormatter().number(from: number)!.int64Value
+//                                let phoneNumber = try phoneNumberKit.parse((contact.phoneNumbers.first?.value.stringValue)!, withRegion: "KR", ignoreType: true)
+//
+//                                let tmp = phoneNumberKit.format(phoneNumber, toType: .e164)
+//                                let index = tmp.index(tmp.startIndex, offsetBy: 1)
+//                                let number = tmp[..<index]
+//
+//                                self.display = phoneNumberKit.format(phoneNumber, toType: .international)
+//                                self.number = NumberFormatter().number(from: String(number))!.int64Value
                                 
                                 self.editConfigurationItem.title = self.display
                                 
@@ -92,7 +97,7 @@ class ShareViewController: SLComposeServiceViewController {
         
         var isSuccessed = false
         if let name = self.contentText, let display = self.display {
-            isSuccessed = Storage.shared.add(name: name, display: display, number: self.number)
+            isSuccessed = Storage.shared.add(name: name, display: display, number: self.number, memo: "")
         }
 
         let alert = UIAlertController(title:self.title, message: isSuccessed ? "성공" : "실패", preferredStyle: .alert)
