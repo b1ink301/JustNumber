@@ -1,0 +1,13 @@
+/* 
+  Strings.strings
+  JustNumber
+
+  Created by evan on 2017. 11. 13..
+  Copyright © 2017년 evan. All rights reserved.
+*/
+"meta_name_hint" = "이름";
+"meta_phone_hint" = "전화번호";
+"meta_save" = "저장";
+"meta_delete" = "삭제";
+"meta_reg" = "등록";
+"meta_title" = "누구";

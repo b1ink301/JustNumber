@@ -10,12 +10,11 @@ import UIKit
 import PhoneNumberKit
 
 class ViewController: UIViewController {
-    
-    @IBOutlet weak var containerView: UIView!
-    
     static let MainSegue = "MainSegue"
     static let AddOrDetailSegue = "AddOrDetailSegue"
     static let DetailSegue = "DetailSegue"
+    
+    @IBOutlet weak var containerView: UIView!
     
     var mainTableViewController: MainTableViewController!
     
@@ -32,29 +31,26 @@ class ViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == ViewController.MainSegue {
             mainTableViewController = segue.destination as! MainTableViewController
-        }
-        else if segue.identifier == ViewController.AddOrDetailSegue {
-            
+        } else if segue.identifier == ViewController.AddOrDetailSegue {
             guard let destinationController = segue.destination as? AddOrDetailViewController else { return }
             destinationController.completionHandler = { (data, status) -> Void in
-                if status == .Insert {
-                    NSLog("Insert...")
+                if status == .insert {
+                    debugPrint("Insert...")
                     self.reloadExtension()
                 }
             }
         }
     }
     
+    // Update CoreData
     internal func reloadExtension() {
         AppDelegate.shared.reloadExtension(completionHandler: { (error) -> Void in
             let parent = self.navigationController as! BaseNaviagtionContoller
             
             if let error = error {
-                NSLog(error.localizedDescription)
+                debugPrint(error.localizedDescription)
                 parent.showToast(msg: error.localizedDescription)
-            }
-            else{
-                
+            } else {
                 parent.showToast(msg: "Successed fetching data from CoreData")
             }
         })
@@ -64,43 +60,41 @@ class ViewController: UIViewController {
         self.reloadExtension()
     }
     
-    @IBAction func actionAdd(_ sender: Any) {
-        
-
-        let alertController = UIAlertController(title: "연락처 등록", message: "새 연락처 추가합니다.", preferredStyle: .alert)
-        let saveAction = UIAlertAction(title: "저장", style: .destructive, handler: {
-            alert -> Void in
-            
-            let firstTextField = alertController.textFields![0] as UITextField
-            let secondTextField = alertController.textFields![1] as UITextField
-            
-            if let name = firstTextField.text, let phone = secondTextField.text {
-                NSLog("name = \(name), phone = \(phone)")
-                
-            }
-        })
-        
-        let cancelAction = UIAlertAction(title: "취소", style: UIAlertActionStyle.cancel, handler: {
-            (action : UIAlertAction!) -> Void in
-        })
-        
-        alertController.addTextField { (textField : UITextField!) -> Void in
-            textField.placeholder = "Enter Name"
-        }
-        alertController.addTextField { (textField : UITextField!) -> Void in
-            
-            if let string = UIPasteboard.general.string {
-                textField.text = string
-            }
-            
-            textField.placeholder = "Enter Phone Number"
-            textField.keyboardType = .numberPad
-        }
-        
-        alertController.addAction(saveAction)
-        alertController.addAction(cancelAction)
-        
-        self.present(alertController, animated: true)
-    }
+//    @IBAction func actionAdd(_ sender: Any) {
+//        let alertController = UIAlertController(title: "연락처 등록", message: "새 연락처 추가합니다.", preferredStyle: .alert)
+//        let saveAction = UIAlertAction(title: "저장", style: .destructive, handler: {
+//            alert -> Void in
+//
+//            let firstTextField = alertController.textFields![0] as UITextField
+//            let secondTextField = alertController.textFields![1] as UITextField
+//
+//            if let name = firstTextField.text, let phone = secondTextField.text {
+//                NSLog("name = \(name), phone = \(phone)")
+//
+//            }
+//        })
+//
+//        let cancelAction = UIAlertAction(title: "취소", style: UIAlertActionStyle.cancel, handler: {
+//            (action : UIAlertAction!) -> Void in
+//        })
+//
+//        alertController.addTextField { (textField : UITextField!) -> Void in
+//            textField.placeholder = "Enter Name"
+//        }
+//        alertController.addTextField { (textField : UITextField!) -> Void in
+//
+//            if let string = UIPasteboard.general.string {
+//                textField.text = string
+//            }
+//
+//            textField.placeholder = "Enter Phone Number"
+//            textField.keyboardType = .numberPad
+//        }
+//
+//        alertController.addAction(saveAction)
+//        alertController.addAction(cancelAction)
+//
+//        self.present(alertController, animated: true)
+//    }
 }
 

@@ -41,36 +41,36 @@ class MainTableViewController: UITableViewController, NSFetchedResultsController
     
     // MARK: - Notification Handling
     
-    internal func managedObjectContextObjectsDidChange(notification: NSNotification) {
-        guard let userInfo = notification.userInfo else { return }
-        
-        if let inserts = userInfo[NSInsertedObjectsKey] as? Set<NSManagedObject>, inserts.count > 0 {
-            print("--- INSERTS ---")
-            print(inserts)
-            print("+++++++++++++++")
-            
-//            reloadExtension()
-        }
-        
-        if let updates = userInfo[NSUpdatedObjectsKey] as? Set<NSManagedObject>, updates.count > 0 {
-            print("--- UPDATES ---")
-            for update in updates {
-                print(update.changedValues())
-            }
-            print("+++++++++++++++")
-            
-            
-//            reloadExtension()
-        }
-        
-        if let deletes = userInfo[NSDeletedObjectsKey] as? Set<NSManagedObject>, deletes.count > 0 {
-            print("--- DELETES ---")
-            print(deletes)
-            print("+++++++++++++++")
-            
-//            reloadExtension()
-        }
-    }
+//    internal func managedObjectContextObjectsDidChange(notification: NSNotification) {
+//        guard let userInfo = notification.userInfo else { return }
+//
+//        if let inserts = userInfo[NSInsertedObjectsKey] as? Set<NSManagedObject>, inserts.count > 0 {
+//            debugPrint("--- INSERTS ---")
+//            debugPrint(inserts)
+//            debugPrint("+++++++++++++++")
+//
+////            reloadExtension()
+//        }
+//
+//        if let updates = userInfo[NSUpdatedObjectsKey] as? Set<NSManagedObject>, updates.count > 0 {
+//            debugPrint("--- UPDATES ---")
+//            for update in updates {
+//                debugPrint(update.changedValues())
+//            }
+//            debugPrint("+++++++++++++++")
+//
+//
+////            reloadExtension()
+//        }
+//
+//        if let deletes = userInfo[NSDeletedObjectsKey] as? Set<NSManagedObject>, deletes.count > 0 {
+//            debugPrint("--- DELETES ---")
+//            debugPrint(deletes)
+//            debugPrint("+++++++++++++++")
+//
+////            reloadExtension()
+//        }
+//    }
 
     
     override func didReceiveMemoryWarning() {
@@ -79,18 +79,18 @@ class MainTableViewController: UITableViewController, NSFetchedResultsController
     }
 
     @IBAction func actionRefresh(_ sender: UIRefreshControl) {
+        self.tableView.reloadData()
         
-//        self.tableView.reloadData()
-        tableView.reloadData()
-        
-        sender.endRefreshing()
+        defer {
+            sender.endRefreshing()
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == ViewController.DetailSegue {
             guard let destinationController = segue.destination as? AddOrDetailViewController, let indexPath = tableView.indexPathForSelectedRow else { return }
 
-            destinationController.title = "상세"
+            destinationController.title = NSLocalizedString("meta_detail_title", comment: "")
             
             let item = dataSource.objectAtIndexPath(indexPath) as! CKItem
             
@@ -101,14 +101,14 @@ class MainTableViewController: UITableViewController, NSFetchedResultsController
                 
                 if data is CKItem {
                     switch status {
-                    case .Delete:
+                    case .delete:
                         if self.dataSource.delete(item: item){
-                            NSLog("Delete...")
+                            debugPrint("Delete...")
                             self.reloadExtension()
                         }
-                    case .Update:
+                    case .update:
                         if Storage.shared.update(data: data as! CKItem){
-                            NSLog("Updated...")
+                            debugPrint("Updated...")
                             
                             self.reloadExtension()
                         }
@@ -128,5 +128,4 @@ class MainTableViewController: UITableViewController, NSFetchedResultsController
 class CKTableViewCell: UITableViewCell {
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var phone: UILabel!
-
 }

@@ -17,14 +17,14 @@ class Utils {
             let display = phoneNumberKit.format(phoneNumber, toType: .international)
             let tmp = phoneNumberKit.format(phoneNumber, toType: .e164)
             let index = tmp.index(tmp.startIndex, offsetBy: 1)
-            let number = tmp[..<index]
+            let number = tmp[index...]
             let intNumber = NumberFormatter().number(from: String(number))!.int64Value
             
-            NSLog("number = \(number), intNumber = \(intNumber)")
+            debugPrint("number = \(number), intNumber = \(intNumber)")
             
             return (display:display, number:intNumber)
         } catch let error as NSError {
-            NSLog("Fetch error: \(error) description: \(error.userInfo)")
+            debugPrint("Fetch error: \(error) description: \(error.userInfo)")
         }
         
         return nil
