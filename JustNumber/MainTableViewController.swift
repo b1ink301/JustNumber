@@ -81,7 +81,7 @@ class MainTableViewController: UITableViewController, NSFetchedResultsController
     @IBAction func actionRefresh(_ sender: UIRefreshControl) {
         self.tableView.reloadData()
         
-        defer {
+        do {
             sender.endRefreshing()
         }
     }
@@ -120,7 +120,7 @@ class MainTableViewController: UITableViewController, NSFetchedResultsController
 
     }
     
-    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
     }
 }

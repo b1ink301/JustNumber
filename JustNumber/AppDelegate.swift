@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         return UIApplication.shared.delegate as! AppDelegate
     }
     
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         NSLog("Finished launching with options: \(String(describing: launchOptions))")
         
         initRealm()
@@ -30,17 +30,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     }
     
     func reloadExtension(completionHandler completion: ((Error?) -> Swift.Void)? = nil){
-        CXCallDirectoryManager.sharedInstance.reloadExtension(withIdentifier: AppDelegate.ExtensionName, completionHandler: completion)
+        CXCallDirectoryManager
+            .sharedInstance
+            .reloadExtension(withIdentifier: AppDelegate.ExtensionName,
+                             completionHandler: completion)
     }
     
-    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         debugPrint("Open url: \(url)")
         
         return true
     }
     
     fileprivate func initRealm(){
-        let fileURL = FileManager.default
+        let fileURL = FileManager
+            .default
             .containerURL(forSecurityApplicationGroupIdentifier: Constants.AppGroupID)!
             .appendingPathComponent("Library/Caches/default.realm")
         

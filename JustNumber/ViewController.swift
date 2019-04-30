@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == ViewController.MainSegue {
-            mainTableViewController = segue.destination as! MainTableViewController
+            mainTableViewController = segue.destination as? MainTableViewController
         } else if segue.identifier == ViewController.AddOrDetailSegue {
             guard let destinationController = segue.destination as? AddOrDetailViewController else { return }
             destinationController.completionHandler = { (data, status) -> Void in
