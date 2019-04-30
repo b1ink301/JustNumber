@@ -170,4 +170,3 @@ class AddOrDetailViewController: UITableViewController, UITextFieldDelegate, UIT
         self.navigationController?.popViewController(animated: true);
     }
 }
-

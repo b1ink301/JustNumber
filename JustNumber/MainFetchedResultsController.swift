@@ -57,6 +57,8 @@ class MainFetchedResultsController: NSFetchedResultsController<NSFetchRequestRes
         case .update, .move:
             guard let indexPath = indexPath else { return }
             tableView.reloadRows(at: [indexPath], with: .automatic)
+        @unknown default: break
+            
         }
     }
     

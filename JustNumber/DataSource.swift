@@ -66,7 +66,7 @@ class DataSource: NSObject, UITableViewDataSource {
         return Storage.shared.save() == .saved
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         
         let item = fetchedResultsController.object(at: indexPath) as! NSManagedObject
         
