@@ -7,6 +7,6 @@
 //
 
 struct Constants {
-    static let AppGroupID = "group.100bang"
-    static let DBFileName = "group.100bang"
+    static let AppGroupID = "group.JustNumber"
+    static let DBFileName = "group.JustNumber"
 }

@@ -59,42 +59,5 @@ class ViewController: UIViewController {
     @IBAction func actionRefresh(_ sender: Any) {
         self.reloadExtension()
     }
-    
-//    @IBAction func actionAdd(_ sender: Any) {
-//        let alertController = UIAlertController(title: "연락처 등록", message: "새 연락처 추가합니다.", preferredStyle: .alert)
-//        let saveAction = UIAlertAction(title: "저장", style: .destructive, handler: {
-//            alert -> Void in
-//
-//            let firstTextField = alertController.textFields![0] as UITextField
-//            let secondTextField = alertController.textFields![1] as UITextField
-//
-//            if let name = firstTextField.text, let phone = secondTextField.text {
-//                NSLog("name = \(name), phone = \(phone)")
-//
-//            }
-//        })
-//
-//        let cancelAction = UIAlertAction(title: "취소", style: UIAlertActionStyle.cancel, handler: {
-//            (action : UIAlertAction!) -> Void in
-//        })
-//
-//        alertController.addTextField { (textField : UITextField!) -> Void in
-//            textField.placeholder = "Enter Name"
-//        }
-//        alertController.addTextField { (textField : UITextField!) -> Void in
-//
-//            if let string = UIPasteboard.general.string {
-//                textField.text = string
-//            }
-//
-//            textField.placeholder = "Enter Phone Number"
-//            textField.keyboardType = .numberPad
-//        }
-//
-//        alertController.addAction(saveAction)
-//        alertController.addAction(cancelAction)
-//
-//        self.present(alertController, animated: true)
-//    }
 }
 

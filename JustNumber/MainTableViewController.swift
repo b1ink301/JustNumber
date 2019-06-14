@@ -30,8 +30,8 @@ class MainTableViewController: UITableViewController, NSFetchedResultsController
     }
     
     internal func reloadExtension() {
-        let parent:ViewController = self.parent as! ViewController
-        parent.reloadExtension()
+        let parent = self.parent as? ViewController
+        parent?.reloadExtension()
     }
 
     override func viewDidDisappear(_ animated: Bool) {
@@ -71,7 +71,6 @@ class MainTableViewController: UITableViewController, NSFetchedResultsController
 ////            reloadExtension()
 //        }
 //    }
-
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -88,28 +87,25 @@ class MainTableViewController: UITableViewController, NSFetchedResultsController
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == ViewController.DetailSegue {
-            guard let destinationController = segue.destination as? AddOrDetailViewController, let indexPath = tableView.indexPathForSelectedRow else { return }
+            guard let destinationController = segue.destination as? AddOrDetailViewController,
+                let indexPath = tableView.indexPathForSelectedRow else { return }
 
             destinationController.title = NSLocalizedString("meta_detail_title", comment: "")
             
             let item = dataSource.objectAtIndexPath(indexPath) as! CKItem
-            
             destinationController.item = item
             destinationController.navigationItem.rightBarButtonItem = nil
-            
             destinationController.completionHandler = { (data, status) -> Void in
-                
                 if data is CKItem {
                     switch status {
                     case .delete:
                         if self.dataSource.delete(item: item){
-                            debugPrint("Delete...")
+                            debugPrint("dataSource.delete")
                             self.reloadExtension()
                         }
                     case .update:
                         if Storage.shared.update(data: data as! CKItem){
-                            debugPrint("Updated...")
-                            
+                            debugPrint("Storage.update")
                             self.reloadExtension()
                         }
                     default: break
@@ -117,7 +113,6 @@ class MainTableViewController: UITableViewController, NSFetchedResultsController
                 }
             }
         }
-
     }
     
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {

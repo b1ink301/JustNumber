@@ -14,8 +14,6 @@
 		20250D181EDBBFBB002CEF0C /* CallDirectoryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20250D171EDBBFBB002CEF0C /* CallDirectoryHandler.swift */; };
 		20476AF61EEFD5F500C176EC /* RequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20476AF51EEFD5F500C176EC /* RequestHandler.swift */; };
 		205591EC1EF20E7100B53452 /* PhoneNumberKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20CD5DEE1EE950F500AB48B4 /* PhoneNumberKit.framework */; };
-		205591EE1EF20E7500B53452 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205591ED1EF20E7500B53452 /* Realm.framework */; };
-		205591F01EF20E7800B53452 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205591EF1EF20E7800B53452 /* RealmSwift.framework */; };
 		205591F21EF2131B00B53452 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205591F11EF2131B00B53452 /* Utils.swift */; };
 		205591F41EF2179A00B53452 /* AddOrDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205591F31EF2179A00B53452 /* AddOrDetailViewController.swift */; };
 		205591F61EF22A6700B53452 /* BaseNaviagtionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205591F51EF22A6700B53452 /* BaseNaviagtionController.swift */; };
@@ -45,6 +43,8 @@
 		20CEF7D11EE7F431009B5685 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CEF7D01EE7F431009B5685 /* Storage.swift */; };
 		20DC540A1EF289F200488E52 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DC54091EF289F200488E52 /* Constants.swift */; };
 		20FD71051EE7FC4B009B1818 /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FD71041EE7FC4B009B1818 /* PersistentContainer.swift */; };
+		F72C116A2278451400F4E890 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F72C11692278451400F4E890 /* RxSwift.framework */; };
+		F72C116C2278451800F4E890 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F72C116B2278451800F4E890 /* RxCocoa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +136,8 @@
 		20DC54091EF289F200488E52 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		20F8B2D81EEA902900A92450 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		20FD71041EE7FC4B009B1818 /* PersistentContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistentContainer.swift; path = JustNumber/PersistentContainer.swift; sourceTree = SOURCE_ROOT; };
+		F72C11692278451400F4E890 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		F72C116B2278451800F4E890 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,9 +159,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F72C116C2278451800F4E890 /* RxCocoa.framework in Frameworks */,
+				F72C116A2278451400F4E890 /* RxSwift.framework in Frameworks */,
 				205591EC1EF20E7100B53452 /* PhoneNumberKit.framework in Frameworks */,
-				205591EE1EF20E7500B53452 /* Realm.framework in Frameworks */,
-				205591F01EF20E7800B53452 /* RealmSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +215,8 @@
 		2085EA5E1ED40F950067D65D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F72C116B2278451800F4E890 /* RxCocoa.framework */,
+				F72C11692278451400F4E890 /* RxSwift.framework */,
 				205591EF1EF20E7800B53452 /* RealmSwift.framework */,
 				205591ED1EF20E7500B53452 /* Realm.framework */,
 				20CD5DEE1EE950F500AB48B4 /* PhoneNumberKit.framework */,
@@ -429,7 +433,7 @@
 				TargetAttributes = {
 					20250D141EDBBFBA002CEF0C = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = WB4K6375G3;
+						DevelopmentTeam = 5RW4CK54HG;
 						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -446,8 +450,9 @@
 					};
 					20B12E8E1ED2CE2600521CD2 = {
 						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = 5RW4CK54HG;
 						LastSwiftMigration = 1020;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -735,10 +740,10 @@
 				CODE_SIGN_ENTITLEMENTS = IntentsExtension/IntentsExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = WB4K6375G3;
+				DEVELOPMENT_TEAM = 5RW4CK54HG;
 				INFOPLIST_FILE = IntentsExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.accommate.test.IntentsExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.b1ink.justnumber.IntentsExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -752,10 +757,10 @@
 				CODE_SIGN_ENTITLEMENTS = IntentsExtension/IntentsExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = WB4K6375G3;
+				DEVELOPMENT_TEAM = 5RW4CK54HG;
 				INFOPLIST_FILE = IntentsExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.accommate.test.IntentsExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.b1ink.justnumber.IntentsExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -920,15 +925,15 @@
 				CODE_SIGN_ENTITLEMENTS = JustNumber/JustNumber.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5RW4CK54HG;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/JustNumber/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.accommate.test;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.b1ink.justnumber;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "JustNumber/JustNumber-Bridging-Header.h";
@@ -947,15 +952,15 @@
 				CODE_SIGN_ENTITLEMENTS = JustNumber/JustNumber.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5RW4CK54HG;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/JustNumber/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.accommate.test;
+				PRODUCT_BUNDLE_IDENTIFIER = kr.b1ink.justnumber;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "JustNumber/JustNumber-Bridging-Header.h";
