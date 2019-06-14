@@ -16,7 +16,7 @@
 
 import UIKit
 
-class AddOrDetailViewController: UITableViewController, UITextFieldDelegate, UITextViewDelegate {
+class AddOrDetailViewController: UITableViewController, UITextViewDelegate {
     @IBOutlet weak var memoTextView: UITextView!
     @IBOutlet weak var spaceCell: UITableViewCell!
     @IBOutlet weak var nameTextField: UITextField!
@@ -72,21 +72,6 @@ class AddOrDetailViewController: UITableViewController, UITextFieldDelegate, UIT
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        
-        if self.nameTextField == textField {
-            status = .update
-            self.newName = textField.text
-        }
-    }
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        
-        if self.memoTextView == textView {
-            status = .update
-            self.newMemo = textView.text
-        }
-    }
     
     @IBAction func actionClose(_ sender: Any) {
         self.dismiss(animated: true)
@@ -123,7 +108,6 @@ class AddOrDetailViewController: UITableViewController, UITextFieldDelegate, UIT
         
         if self.deleteCell.isHidden {
             // Insert Item
-            
             let data = Utils.makeItem(phone: self.numberTextField.text!)
             
             guard data != nil else {
@@ -168,5 +152,21 @@ class AddOrDetailViewController: UITableViewController, UITextFieldDelegate, UIT
         self.completionHandler(self.item!, .delete)
         
         self.navigationController?.popViewController(animated: true);
+    }
+}
+
+extension AddOrDetailViewController : UITextFieldDelegate{
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if self.nameTextField == textField {
+            status = .update
+            self.newName = textField.text
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if self.memoTextView == textView {
+            status = .update
+            self.newMemo = textView.text
+        }
     }
 }

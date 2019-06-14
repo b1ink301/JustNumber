@@ -57,7 +57,7 @@ extension NSPersistentStoreCoordinator {
 struct Storage {
     public static let entityName = "Data"
     public static let modelName = "CKModel"
-    public static let appGroupID = "group.100bang"
+    public static let appGroupID = "group.JustNumber"
 
     static var shared = Storage()
     
@@ -150,32 +150,23 @@ struct Storage {
     }
     
     mutating func hasNumber(number:Int64) -> Bool {
-        
         do {
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Storage.entityName)
             fetchRequest.predicate = NSPredicate(format: "number = %d", number)
-            
             let searchResults = try context.fetch(fetchRequest)
-            
             return searchResults.count > 0
-            
         } catch {
             print("Error with request: \(error)")
         }
-        
-        
         return false
     }
 
-    
     mutating func update(data:CKItem) -> Bool {
-        
         let fetchRequest: NSFetchRequest<CKItem> = CKItem.fetchRequest()
 //        let fetchRequest = NSBatchUpdateRequest(entityName: Storage.entityName)
 //        fetchRequest.predicate = NSPredicate(format: "number = %d", item.number)
         
         var hasItem:Bool = false
-        
         do {
             let searchResults = try context.fetch(fetchRequest)
            
@@ -187,18 +178,13 @@ struct Storage {
                     if data.memo != nil {
                         item.memo = data.memo
                     }
-                    
                     hasItem = true
-                    
                     break
                 }
             }
-            
         } catch {
             print("Error with request: \(error)")
         }
-
-        
         return hasItem ? save() == .saved : false
     }
     

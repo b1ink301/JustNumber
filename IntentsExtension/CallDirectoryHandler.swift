@@ -13,7 +13,7 @@ import CoreData
 class CallDirectoryHandler: CXCallDirectoryProvider {
 
     override func beginRequest(with context: CXCallDirectoryExtensionContext) {
-        NSLog("beginRequest")
+        debugPrint("beginRequest")
         
         context.delegate = self
 
@@ -39,7 +39,7 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
     }
 
     private func addBlockingPhoneNumbers(to context: CXCallDirectoryExtensionContext) throws {
-        NSLog("addBlockingPhoneNumbers")
+        debugPrint("addBlockingPhoneNumbers")
         
         // Retrieve phone numbers to block from data store. For optimal performance and memory usage when there are many phone numbers,
         // consider only loading a subset of numbers at a given time and using autorelease pool(s) to release objects allocated during each batch of numbers which are loaded.
@@ -53,7 +53,7 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
     }
 
     private func addIdentificationPhoneNumbers(to context: CXCallDirectoryExtensionContext) throws {
-        NSLog("addIdentificationPhoneNumbers")
+        debugPrint("addIdentificationPhoneNumbers")
         
         // Retrieve phone numbers to identify and their identification labels from data store. For optimal performance and memory usage when there are many phone numbers,
         // consider only loading a subset of numbers at a given time and using autorelease pool(s) to release objects allocated during each batch of numbers which are loaded.
@@ -84,7 +84,7 @@ class CallDirectoryHandler: CXCallDirectoryProvider {
 extension CallDirectoryHandler: CXCallDirectoryExtensionContextDelegate {
 
     func requestFailed(for extensionContext: CXCallDirectoryExtensionContext, withError error: Error) {
-        NSLog("An error occured when completing the request: \(error.localizedDescription)")
+        debugPrint("An error occured when completing the request: \(error.localizedDescription)")
 
         // An error occurred while adding blocking or identification entries, check the NSError for details.
         // For Call Directory error codes, see the CXErrorCodeCallDirectoryManagerError enum in <CallKit/CXError.h>.

@@ -49,7 +49,6 @@ class DataSource: NSObject, UITableViewDataSource {
     
     fileprivate func configureCell(_ cell: UITableViewCell, atIndexPath indexPath: IndexPath) -> UITableViewCell {
         let item = fetchedResultsController.object(at: indexPath) as! CKItem
-
         let nameView = cell.viewWithTag(1) as! UILabel
         let phoneView = cell.viewWithTag(2) as! UILabel
         
@@ -62,14 +61,11 @@ class DataSource: NSObject, UITableViewDataSource {
     @discardableResult
     func delete(item : NSManagedObject) -> Bool {
         managedObjectContext.delete(item)
-        
         return Storage.shared.save() == .saved
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        
         let item = fetchedResultsController.object(at: indexPath) as! NSManagedObject
-        
         delete(item: item)
     }
     

@@ -10,8 +10,7 @@ import Foundation
 import CoreData
 import UIKit
 
-class MainFetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>, NSFetchedResultsControllerDelegate {
-    
+class MainFetchedResultsController: NSFetchedResultsController<NSFetchRequestResult> {
     fileprivate let tableView: UITableView
     
     init(managedObjectContext: NSManagedObjectContext, withTableView tableView: UITableView) {
@@ -37,7 +36,6 @@ class MainFetchedResultsController: NSFetchedResultsController<NSFetchRequestRes
     }
     
     // MARK: NSFetchedResultsControllerDelegate
-    
     func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
     }
@@ -45,7 +43,9 @@ class MainFetchedResultsController: NSFetchedResultsController<NSFetchRequestRes
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.endUpdates()
     }
-    
+}
+
+extension MainFetchedResultsController : NSFetchedResultsControllerDelegate {
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
         switch type {
         case .insert:
@@ -58,8 +58,6 @@ class MainFetchedResultsController: NSFetchedResultsController<NSFetchRequestRes
             guard let indexPath = indexPath else { return }
             tableView.reloadRows(at: [indexPath], with: .automatic)
         @unknown default: break
-            
         }
     }
-    
 }
