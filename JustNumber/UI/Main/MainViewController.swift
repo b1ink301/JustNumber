@@ -9,14 +9,14 @@
 import UIKit
 import PhoneNumberKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
     static let MainSegue = "MainSegue"
-    static let AddOrDetailSegue = "AddOrDetailSegue"
+    static let AddSegue = "AddSegue"
     static let DetailSegue = "DetailSegue"
     
     @IBOutlet weak var containerView: UIView!
     
-    var mainTableViewController: MainTableViewController!
+//    var mainTableViewController: MainTableViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,10 +29,11 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == ViewController.MainSegue {
-            mainTableViewController = segue.destination as? MainTableViewController
-        } else if segue.identifier == ViewController.AddOrDetailSegue {
-            guard let destinationController = segue.destination as? AddOrDetailViewController else { return }
+        if segue.identifier == MainViewController.MainSegue {
+//            mainTableViewController = segue.destination as? MainTableViewController
+        } else if segue.identifier == MainViewController.AddSegue {
+            guard let destinationController = segue.destination as? AddOrEditViewController else { return }
+            destinationController.title = "추가"
             destinationController.completionHandler = { (data, status) -> Void in
                 if status == .insert {
                     debugPrint("Insert...")
@@ -45,18 +46,21 @@ class ViewController: UIViewController {
     // Update CoreData
     internal func reloadExtension() {
         AppDelegate.shared.reloadExtension(completionHandler: { (error) -> Void in
-            let parent = self.navigationController as! BaseNaviagtionContoller
-            
-            if let error = error {
-                debugPrint(error.localizedDescription)
-                parent.showToast(msg: error.localizedDescription)
-            } else {
-                parent.showToast(msg: "Successed fetching data from CoreData")
+            DispatchQueue.main.async {
+                if let parent = self.navigationController as? BaseNaviagtionContoller {
+                    if let error = error {
+                        debugPrint(error.localizedDescription)
+                        parent.showToast(msg: error.localizedDescription)
+                    } else {
+                        parent.showToast(msg: "Successed fetching data from CoreData")
+                    }
+                }
             }
         })
     }
     
     @IBAction func actionRefresh(_ sender: Any) {
+        // TODO : 권한체크
         self.reloadExtension()
     }
 }

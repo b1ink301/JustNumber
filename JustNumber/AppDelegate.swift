@@ -8,12 +8,11 @@
 
 import UIKit
 import CallKit
-//import Realm
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate{
     
-    static let ExtensionName = "kr.b1ink.justnumber.IntentsExtension"
+    static let ExtensionName = "kr.b1ink.justnumber1.IntentsExtension"
     
     var window: UIWindow?
     
@@ -22,9 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        NSLog("Finished launching with options: \(String(describing: launchOptions))")
-        
-//        initRealm()
+        debugPrint("Finished launching with options: \(String(describing: launchOptions))")
         
         return true
     }
@@ -40,15 +37,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate{
         debugPrint("Open url: \(url)")
         
         return true
-    }
-    
-    fileprivate func initRealm(){
-        let fileURL = FileManager
-            .default
-            .containerURL(forSecurityApplicationGroupIdentifier: Constants.AppGroupID)!
-            .appendingPathComponent("Library/Caches/default.realm")
-        
-        debugPrint("fileURL = \(fileURL)")
     }
 
     func applicationWillTerminate(_ application: UIApplication) {

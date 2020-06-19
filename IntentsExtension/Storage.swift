@@ -14,13 +14,13 @@ extension NSPersistentStoreCoordinator {
     
     /// NSPersistentStoreCoordinator error types
     public enum CoordinatorError: Error {
-        /// .momd file not found
+        // .momd file not found
         case modelFileNotFound
-        /// NSManagedObjectModel creation fail
+        // NSManagedObjectModel creation fail
         case modelCreationError
-        /// Gettings document directory fail
+        // Gettings document directory fail
         case storePathNotFound
-        /// Gettings group URL fail
+        // Gettings group URL fail
         case groupURLNotFound
     }
     
@@ -57,7 +57,7 @@ extension NSPersistentStoreCoordinator {
 struct Storage {
     public static let entityName = "Data"
     public static let modelName = "CKModel"
-    public static let appGroupID = "group.JustNumber"
+    public static let appGroupID = "group.just.number"
 
     static var shared = Storage()
     
