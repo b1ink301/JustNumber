@@ -16,7 +16,7 @@
 
 import UIKit
 
-class AddOrDetailViewController: UITableViewController, UITextViewDelegate {
+class AddOrEditViewController: UITableViewController, UITextViewDelegate {
     @IBOutlet weak var memoTextView: UITextView!
     @IBOutlet weak var spaceCell: UITableViewCell!
     @IBOutlet weak var nameTextField: UITextField!
@@ -155,7 +155,7 @@ class AddOrDetailViewController: UITableViewController, UITextViewDelegate {
     }
 }
 
-extension AddOrDetailViewController : UITextFieldDelegate{
+extension AddOrEditViewController : UITextFieldDelegate{
     func textFieldDidEndEditing(_ textField: UITextField) {
         if self.nameTextField == textField {
             status = .update

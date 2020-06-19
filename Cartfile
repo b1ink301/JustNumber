@@ -1,5 +1,4 @@
 github "marmelroy/PhoneNumberKit"
-github "realm/realm-cocoa"
 github "SyncDB/Sync"
-github "ReactiveX/RxSwift" ~> 5.0
+github "ReactiveX/RxSwift"
 

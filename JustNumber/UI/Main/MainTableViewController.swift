@@ -30,7 +30,7 @@ class MainTableViewController: UITableViewController, NSFetchedResultsController
     }
     
     internal func reloadExtension() {
-        let parent = self.parent as? ViewController
+        let parent = self.parent as? MainViewController
         parent?.reloadExtension()
     }
 
@@ -86,8 +86,8 @@ class MainTableViewController: UITableViewController, NSFetchedResultsController
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == ViewController.DetailSegue {
-            guard let destinationController = segue.destination as? AddOrDetailViewController,
+        if segue.identifier == MainViewController.DetailSegue {
+            guard let destinationController = segue.destination as? AddOrEditViewController,
                 let indexPath = tableView.indexPathForSelectedRow else { return }
 
             destinationController.title = NSLocalizedString("meta_detail_title", comment: "")
