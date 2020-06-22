@@ -22,12 +22,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rw1-Of-WSU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1348" y="-94"/>
+            <point key="canvasLocation" x="-1540" y="-94"/>
         </scene>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="u1y-Wx-glf">
             <objects>
-                <viewController id="E2i-mU-1nL" customClass="ViewController" customModule="JustNumber" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="E2i-mU-1nL" customClass="MainViewController" customModule="JustNumber" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Phl-Ye-BWS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -51,21 +51,18 @@
                     <navigationItem key="navigationItem" id="q2t-xx-Ono">
                         <barButtonItem key="leftBarButtonItem" systemItem="refresh" id="Nv4-rI-sqK">
                             <connections>
-                                <action selector="actionRefresh:" destination="E2i-mU-1nL" id="8xl-B9-Z3O"/>
+                                <action selector="actionRefresh:" destination="E2i-mU-1nL" id="oS5-OI-YdT"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="N1s-Wm-bmE">
                             <connections>
-                                <segue destination="3Rt-Nk-nuf" kind="showDetail" identifier="AddOrDetailSegue" id="oxg-3U-VXx"/>
+                                <segue destination="3Rt-Nk-nuf" kind="showDetail" identifier="AddOrEditSegue" id="oxg-3U-VXx"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="localizedText" value="meta_main_title"/>
                     </userDefinedRuntimeAttributes>
-                    <connections>
-                        <outlet property="containerView" destination="8YH-vS-ZcM" id="F1q-v4-JvZ"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6lS-ZA-SMC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -134,7 +131,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5uy-Ya-bee" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-543.20000000000005" y="627.4362818590705"/>
+            <point key="canvasLocation" x="-543" y="646"/>
         </scene>
         <!--Base Naviagtion Contoller-->
         <scene sceneID="m44-IM-bVN">
@@ -150,7 +147,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dor-j8-dcf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="417" y="-478"/>
+            <point key="canvasLocation" x="449" y="-94"/>
         </scene>
         <!--Add PhoneNumber-->
         <scene sceneID="8Ys-TU-4Yc">
@@ -345,7 +342,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1c2-Zr-5tJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="417" y="287"/>
+            <point key="canvasLocation" x="449" y="647"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
