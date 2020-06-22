@@ -11,7 +11,7 @@ import PhoneNumberKit
 
 class MainViewController: UIViewController {
     static let MainSegue = "MainSegue"
-    static let AddSegue = "AddSegue"
+    static let AddOrEditSegue = "AddOrEditSegue"
     static let DetailSegue = "DetailSegue"
     
     @IBOutlet weak var containerView: UIView!
@@ -31,9 +31,9 @@ class MainViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == MainViewController.MainSegue {
 //            mainTableViewController = segue.destination as? MainTableViewController
-        } else if segue.identifier == MainViewController.AddSegue {
+        } else if segue.identifier == MainViewController.AddOrEditSegue {
             guard let destinationController = segue.destination as? AddOrEditViewController else { return }
-            destinationController.title = "추가"
+//            destinationController.title = "추가"
             destinationController.completionHandler = { (data, status) -> Void in
                 if status == .insert {
                     debugPrint("Insert...")

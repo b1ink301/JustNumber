@@ -24,10 +24,9 @@ class BaseNaviagtionContoller: UINavigationController {
             toast.message = msg;
             self.present(toast, animated: true)
             
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(2)) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
                 toast.dismiss(animated: true)
             }
         }
     }
-
 }
