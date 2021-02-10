@@ -17,18 +17,9 @@
 import UIKit
 
 class AddOrEditViewController: UITableViewController, UITextViewDelegate {
-    @IBOutlet weak var memoTextView: UITextView!
-    @IBOutlet weak var spaceCell: UITableViewCell!
+    @IBOutlet weak var memoTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var numberTextField: UITextField!
-    @IBOutlet weak var deleteCell: UITableViewCell!
-    
-    enum CompletionStatus : Int {
-        case none
-        case update
-        case delete
-        case insert
-    }
     
     var completionHandler: (NSObject, CompletionStatus) -> Void = { _,_  in }
     var status : CompletionStatus = .none
@@ -40,7 +31,7 @@ class AddOrEditViewController: UITableViewController, UITextViewDelegate {
             DispatchQueue.main.async {
                 self.nameTextField.text = self.item?.name
                 self.numberTextField.text = self.item?.display
-                self.memoTextView.text = self.item?.memo
+                self.memoTextField.text = self.item?.memo
                 
                 // ReadOnly
                 self.numberTextField.isUserInteractionEnabled = false
@@ -52,12 +43,9 @@ class AddOrEditViewController: UITableViewController, UITextViewDelegate {
         super.viewDidLoad()
         
         self.nameTextField.delegate = self as UITextFieldDelegate
-        self.memoTextView.delegate = self as UITextViewDelegate
+        self.memoTextField.delegate = self as UITextFieldDelegate
         
         if self.item == nil {
-            self.deleteCell.isHidden = true
-            self.spaceCell.isHidden = true
-            
             if let string = UIPasteboard.general.string {
                 self.numberTextField.text = string
             }
@@ -91,13 +79,13 @@ class AddOrEditViewController: UITableViewController, UITextViewDelegate {
         return true
     }
     
-    @IBAction func actionSave(_ sender: UIButton) {
+    @IBAction func actionSave(_ sender: Any) {
         
         if self.nameTextField.isFirstResponder {
             self.nameTextField.resignFirstResponder()
         }
-        if self.memoTextView.isFirstResponder {
-            self.memoTextView.resignFirstResponder()
+        if self.memoTextField.isFirstResponder {
+            self.memoTextField.resignFirstResponder()
         }
         
         if !isInvalid() {
@@ -106,32 +94,32 @@ class AddOrEditViewController: UITableViewController, UITextViewDelegate {
             return
         }
         
-        if self.deleteCell.isHidden {
-            // Insert Item
-            let data = Utils.makeItem(phone: self.numberTextField.text!)
-            
-            guard data != nil else {
-                let parent = self.navigationController as! BaseNaviagtionContoller
-                parent.showToast(msg: "전화 번호를 확인해 주세요.")
-                self.numberTextField.becomeFirstResponder()
-                return
-            }
-            
-            guard !Storage.shared.hasNumber(number: data!.number) else {
-                let parent = self.navigationController as! BaseNaviagtionContoller
-                parent.showToast(msg: "이미 등롣된 번호입니다.")
-                self.numberTextField.becomeFirstResponder()
-                return
-            }
-            
-            if Storage.shared.add(name: self.nameTextField.text!, display: data!.display, number: data!.number, memo: self.memoTextView.text!) {
-                self.completionHandler(NSObject(), .insert)
-                self.dismiss(animated: true)
-            } else {
-                let parent = self.navigationController as! BaseNaviagtionContoller
-                parent.showToast(msg: "에러가 발생했습니다.")
-            }
-        } else {
+//        if self.deleteCell.isHidden {
+//            // Insert Item
+//            let data = Utils.makeItem(phone: self.numberTextField.text!)
+//
+//            guard data != nil else {
+//                let parent = self.navigationController as! BaseNaviagtionContoller
+//                parent.showToast(msg: "전화 번호를 확인해 주세요.")
+//                self.numberTextField.becomeFirstResponder()
+//                return
+//            }
+//
+//            guard !Storage.shared.hasNumber(number: data!.number) else {
+//                let parent = self.navigationController as! BaseNaviagtionContoller
+//                parent.showToast(msg: "이미 등롣된 번호입니다.")
+//                self.numberTextField.becomeFirstResponder()
+//                return
+//            }
+//
+//            if Storage.shared.add(name: self.nameTextField.text!, display: data!.display, number: data!.number, memo: self.memoTextView.text!) {
+//                self.completionHandler(NSObject(), .insert)
+//                self.dismiss(animated: true)
+//            } else {
+//                let parent = self.navigationController as! BaseNaviagtionContoller
+//                parent.showToast(msg: "에러가 발생했습니다.")
+//            }
+//        } else {
             if status == .update {
                 debugPrint("actionSave Update")
                 
@@ -145,28 +133,24 @@ class AddOrEditViewController: UITableViewController, UITextViewDelegate {
                 
                 self.completionHandler(self.item!, status)
             }
-        }
+//        }
     }
     
-    @IBAction func actionDelete(_ sender: UIButton) {
+    @IBAction func actionDelete(_ sender: Any) {
         self.completionHandler(self.item!, .delete)
         
         self.navigationController?.popViewController(animated: true);
     }
 }
 
-extension AddOrEditViewController : UITextFieldDelegate{
+extension AddOrEditViewController : UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         if self.nameTextField == textField {
             status = .update
             self.newName = textField.text
-        }
-    }
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if self.memoTextView == textView {
+        } else if self.memoTextField == textField {
             status = .update
-            self.newMemo = textView.text
+            self.newMemo = textField.text
         }
     }
 }

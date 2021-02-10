@@ -11,12 +11,13 @@ import RxCocoa
 import RxSwift
 
 class DetailTableViewController: UITableViewController, UITextViewDelegate {
-    @IBOutlet weak var memoTextView: UITextView!
+    @IBOutlet weak var memoTextField: UITextField!
+    @IBOutlet weak var spaceCell: UITableViewCell!
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var numberLabel: UILabel!
+    @IBOutlet weak var numberTextField: UITextField!
     
-    var completionHandler: (CKItem, Bool) -> Void = {_,_  in }
-    var isUpdated : Bool = false
+    var completionHandler: (NSObject, CompletionStatus) -> Void = { _,_  in }
+    var status : CompletionStatus = .none
     var newName : String?
     var newMemo : String?
     
@@ -24,84 +25,73 @@ class DetailTableViewController: UITableViewController, UITextViewDelegate {
         didSet {
             DispatchQueue.main.async {
                 self.nameTextField.text = self.item?.name
-                self.numberLabel.text = self.item?.display
-                self.memoTextView.text = self.item?.memo
+                self.numberTextField.text = self.item?.display
+                self.memoTextField.text = self.item?.memo
+                
+                // ReadOnly
+                self.nameTextField.isUserInteractionEnabled = false
+                self.memoTextField.isUserInteractionEnabled = false
+                self.numberTextField.isUserInteractionEnabled = false
             }
         }
     }
-    
-    var disposeBag = DisposeBag()
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        // 메모리 해제
-        disposeBag = DisposeBag()
-    }
-    
-    let nameInputText = BehaviorSubject.init(value: "")
-    let memoInputText = BehaviorSubject.init(value: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.nameTextField.delegate = self as UITextFieldDelegate
-        self.memoTextView.delegate = self as UITextViewDelegate
+        self.memoTextField.delegate = self as UITextFieldDelegate
         
-        let memoValid = self.memoTextView.rx.text.orEmpty
-                            .map{ $0.count>3 }
-
-        let nameValid = self.nameTextField.rx.text.orEmpty
-                            .map{ $0.count>3 }
-        
-        
-        self.navigationItem.rightBarButtonItem?
-            .rx
-            .tap
-            .subscribe(onNext: { /*[weak self]*/ _ in
+        if self.item == nil {
+            //            self.deleteCell.isHidden = true
+            //            self.spaceCell.isHidden = true
             
-            })
-            .disposed(by: disposeBag)
-        
-        nameValid
-            .bind(to: nameTextField.rx.isEnabled)
-            .disposed(by: disposeBag)
-        
-        memoValid
-            .bind(to: memoTextView.rx.isUserInteractionEnabled)
-            .disposed(by: disposeBag)
-        
-        Observable.combineLatest(nameValid, memoValid,resultSelector: { $0 && $1 })
-            .subscribe(onNext: { b in
-                
-            })
-            .disposed(by: disposeBag)
+            if let string = UIPasteboard.general.string {
+                self.numberTextField.text = string
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-    }
-    
     @IBAction func actionClose(_ sender: Any) {
         self.dismiss(animated: true)
     }
     
-    @IBAction func actionSave(_ sender: UIButton) {
+    func isInvalid() -> Bool {
+        if let text = self.nameTextField!.text, text.isEmpty {
+            print("nameTextField isEmpty")
+            return false
+        }
+        
+        if let text = self.numberTextField.text, text.isEmpty {
+            print("nameTextnumberTextField isEmpty")
+            return false
+        }
+        
+        return true
+    }
+    
+    @IBAction func actionSave(_ sender: Any) {
+        
         if self.nameTextField.isFirstResponder {
             self.nameTextField.resignFirstResponder()
         }
-        if self.memoTextView.isFirstResponder {
-            self.memoTextView.resignFirstResponder()
+        if self.memoTextField.isFirstResponder {
+            self.memoTextField.resignFirstResponder()
         }
         
-        if isUpdated {
-            isUpdated = false
-            NSLog("actionSave")
+        if !isInvalid() {
+            let parent = self.navigationController as! BaseNaviagtionContoller
+            parent.showToast(msg: "입력 값을 확인해 주세요!")
+            return
+        }
+  
+        if status == .update {
+            debugPrint("actionSave Update")
             
             if let name = self.newName {
                 self.item?.name = name
@@ -111,28 +101,48 @@ class DetailTableViewController: UITableViewController, UITextViewDelegate {
                 self.item?.memo = memo
             }
             
-            self.completionHandler(self.item!, false)
+            self.completionHandler(self.item!, status)
         }
     }
-
-    @IBAction func actionDelete(_ sender: UIButton) {
-        self.completionHandler(self.item!, true)
+    
+    @IBAction func actionDelete(_ sender: Any) {
+        self.completionHandler(self.item!, .delete)
+        
         self.navigationController?.popViewController(animated: true);
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == MainViewController.EditSegue {
+            guard let navigationController = segue.destination as? BaseNaviagtionContoller,
+                  let destinationController = navigationController.viewControllers.first as? AddOrEditViewController else {return}
+            
+            //            destinationController.title = NSLocalizedString("meta_detail_title", comment: "")
+            
+            destinationController.item = item
+            //            destinationController.navigationItem.rightBarButtonItem = nil
+            destinationController.completionHandler = { (data, status) -> Void in
+                if data is CKItem {
+                    switch status {
+                    case .delete: break
+                    case .update: break
+                        
+                    default: break
+                    }
+                }
+            }
+        }
     }
 }
 
 extension DetailTableViewController : UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         if self.nameTextField == textField {
-            isUpdated = true
+            status = .update
             self.newName = textField.text
-        }
-    }
-    
-    func textViewDidEndEditing(_ textView: UITextView) {
-        if self.memoTextView == textView {
-            isUpdated = true
-            self.newMemo = textView.text
+        } else if self.memoTextField == textField {
+            status = .update
+            self.newMemo = textField.text
         }
     }
 }
+

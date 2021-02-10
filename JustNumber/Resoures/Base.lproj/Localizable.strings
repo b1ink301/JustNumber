@@ -13,3 +13,5 @@
 "meta_reg" = "Registration";
 "meta_main_title" = "whoau";
 "meta_detail_title" = "Detail";
+"meta_memo_hint" = "Memo";
+

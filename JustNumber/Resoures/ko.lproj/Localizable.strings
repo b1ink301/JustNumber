@@ -14,4 +14,5 @@
 "meta_delete" = "삭제";
 "meta_reg" = "등록";
 "meta_main_title" = "JustNumber";
-"meta_detail_title" = "상세정보";
+"meta_detail_title" = "상세";
+"meta_memo_hint" = "메모을 입력해주세요";
