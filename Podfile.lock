@@ -1,0 +1,35 @@
+PODS:
+  - PhoneNumberKit (3.3.1):
+    - PhoneNumberKit/PhoneNumberKitCore (= 3.3.1)
+    - PhoneNumberKit/UIKit (= 3.3.1)
+  - PhoneNumberKit/PhoneNumberKitCore (3.3.1)
+  - PhoneNumberKit/UIKit (3.3.1):
+    - PhoneNumberKit/PhoneNumberKitCore
+  - RxCocoa (6.0.0):
+    - RxRelay (= 6.0.0)
+    - RxSwift (= 6.0.0)
+  - RxRelay (6.0.0):
+    - RxSwift (= 6.0.0)
+  - RxSwift (6.0.0)
+
+DEPENDENCIES:
+  - PhoneNumberKit (~> 3.3)
+  - RxCocoa (= 6.0.0)
+  - RxSwift (= 6.0.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - PhoneNumberKit
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+
+SPEC CHECKSUMS:
+  PhoneNumberKit: ff153d5e299f6da566cb73c6aa71e354933b2932
+  RxCocoa: 3f79328fafa3645b34600f37c31e64c73ae3a80e
+  RxRelay: 8d593be109c06ea850df027351beba614b012ffb
+  RxSwift: c14e798c59b9f6e9a2df8fd235602e85cc044295
+
+PODFILE CHECKSUM: 557523cc00e16486998b50a7a0d5cd3e3d0cdba0
+
+COCOAPODS: 1.10.0
