@@ -9,6 +9,14 @@
 import UIKit
 import CoreData
 
+
+enum CompletionStatus : Int {
+    case none
+    case update
+    case delete
+    case insert
+}
+
 class MainTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
     private let imageCellIdentifier = "textCell"
@@ -87,14 +95,14 @@ class MainTableViewController: UITableViewController, NSFetchedResultsController
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == MainViewController.DetailSegue {
-            guard let destinationController = segue.destination as? AddOrEditViewController,
+            guard let destinationController = segue.destination as? DetailTableViewController,
                 let indexPath = tableView.indexPathForSelectedRow else { return }
 
-            destinationController.title = NSLocalizedString("meta_detail_title", comment: "")
+//            destinationController.title = NSLocalizedString("meta_detail_title", comment: "")
             
             let item = dataSource.objectAtIndexPath(indexPath) as! CKItem
             destinationController.item = item
-            destinationController.navigationItem.rightBarButtonItem = nil
+//            destinationController.navigationItem.rightBarButtonItem = nil
             destinationController.completionHandler = { (data, status) -> Void in
                 if data is CKItem {
                     switch status {

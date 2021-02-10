@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class BaseNaviagtionContoller: UINavigationController {
     override func viewDidLoad() {

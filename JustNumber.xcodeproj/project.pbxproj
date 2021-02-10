@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B6B2E1313F045A7D926B298 /* Pods_JustNumber.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 443D16DF8E6073CA9BA78004 /* Pods_JustNumber.framework */; };
 		200D93F51EEA40FC00A65A24 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200D93F41EEA40FC00A65A24 /* DetailTableViewController.swift */; };
 		200D94021EEA8E5F00A65A24 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 200D94041EEA8E5F00A65A24 /* InfoPlist.strings */; };
 		200F5B831EEF7455002FE82C /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200F5B821EEF7455002FE82C /* DataSource.swift */; };
 		200F5B851EEF74FE002FE82C /* MainFetchedResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 200F5B841EEF74FE002FE82C /* MainFetchedResultsController.swift */; };
 		20250D181EDBBFBB002CEF0C /* CallDirectoryHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20250D171EDBBFBB002CEF0C /* CallDirectoryHandler.swift */; };
 		20476AF61EEFD5F500C176EC /* RequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20476AF51EEFD5F500C176EC /* RequestHandler.swift */; };
-		205591EC1EF20E7100B53452 /* PhoneNumberKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20CD5DEE1EE950F500AB48B4 /* PhoneNumberKit.framework */; };
 		205591F21EF2131B00B53452 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205591F11EF2131B00B53452 /* Utils.swift */; };
 		205591F41EF2179A00B53452 /* AddOrEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205591F31EF2179A00B53452 /* AddOrEditViewController.swift */; };
 		205591F61EF22A6700B53452 /* BaseNaviagtionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205591F51EF22A6700B53452 /* BaseNaviagtionController.swift */; };
@@ -39,7 +39,6 @@
 		20CD5DDF1EE9151F00AB48B4 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CD5DDE1EE9151F00AB48B4 /* ShareViewController.swift */; };
 		20CD5DE21EE9151F00AB48B4 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20CD5DE01EE9151F00AB48B4 /* MainInterface.storyboard */; };
 		20CD5DEB1EE94AC800AB48B4 /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20CD5DEA1EE94AC800AB48B4 /* Contacts.framework */; };
-		20CD5DEF1EE950F500AB48B4 /* PhoneNumberKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 20CD5DEE1EE950F500AB48B4 /* PhoneNumberKit.framework */; };
 		20CEF7D11EE7F431009B5685 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20CEF7D01EE7F431009B5685 /* Storage.swift */; };
 		20FD71051EE7FC4B009B1818 /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20FD71041EE7FC4B009B1818 /* PersistentContainer.swift */; };
 		4900C2C6249C3BF900B65850 /* LocalizableViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20797F0E1FB987F8000078F7 /* LocalizableViews.swift */; };
@@ -47,8 +46,6 @@
 		497F348824A06B4A00F306C4 /* ActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497F348724A06B4A00F306C4 /* ActionViewController.swift */; };
 		497F348B24A06B4A00F306C4 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 497F348924A06B4A00F306C4 /* MainInterface.storyboard */; };
 		497F349324A073BF00F306C4 /* action.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 497F348324A06B4A00F306C4 /* action.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		F72C116A2278451400F4E890 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F72C11692278451400F4E890 /* RxSwift.framework */; };
-		F72C116C2278451800F4E890 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F72C116B2278451800F4E890 /* RxCocoa.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,9 +107,6 @@
 		20476AF31EEFD5F400C176EC /* ShareLink.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ShareLink.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		20476AF51EEFD5F500C176EC /* RequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHandler.swift; sourceTree = "<group>"; };
 		20476AF71EEFD5F500C176EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		20556B8D1EEE2884001B82D3 /* JustNumber-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JustNumber-Bridging-Header.h"; sourceTree = "<group>"; };
-		205591ED1EF20E7500B53452 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Carthage/Build/iOS/Realm.framework; sourceTree = "<group>"; };
-		205591EF1EF20E7800B53452 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Carthage/Build/iOS/RealmSwift.framework; sourceTree = "<group>"; };
 		205591F11EF2131B00B53452 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		205591F31EF2179A00B53452 /* AddOrEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOrEditViewController.swift; sourceTree = "<group>"; };
 		205591F51EF22A6700B53452 /* BaseNaviagtionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNaviagtionController.swift; sourceTree = "<group>"; };
@@ -141,19 +135,19 @@
 		20CD5DE31EE9151F00AB48B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20CD5DEA1EE94AC800AB48B4 /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
 		20CD5DEC1EE950D000AB48B4 /* iOS */ = {isa = PBXFileReference; lastKnownFileType = folder; name = iOS; path = Carthage/Build/iOS; sourceTree = "<group>"; };
-		20CD5DEE1EE950F500AB48B4 /* PhoneNumberKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhoneNumberKit.framework; path = Carthage/Build/iOS/PhoneNumberKit.framework; sourceTree = "<group>"; };
 		20CEF7C91EE7822A009B5685 /* IntentsExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IntentsExtension.entitlements; sourceTree = "<group>"; };
 		20CEF7D01EE7F431009B5685 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		20D9914C1EEA8F0D00698AC9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20F8B2D81EEA902900A92450 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		20FD71041EE7FC4B009B1818 /* PersistentContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersistentContainer.swift; path = JustNumber/PersistentContainer.swift; sourceTree = SOURCE_ROOT; };
+		443D16DF8E6073CA9BA78004 /* Pods_JustNumber.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JustNumber.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		497F348324A06B4A00F306C4 /* action.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = action.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		497F348524A06B4A00F306C4 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		497F348724A06B4A00F306C4 /* ActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionViewController.swift; sourceTree = "<group>"; };
 		497F348A24A06B4A00F306C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		497F348C24A06B4A00F306C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F72C11692278451400F4E890 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
-		F72C116B2278451800F4E890 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
+		4DB55DF2674FE0C7213CF5D4 /* Pods-JustNumber.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustNumber.debug.xcconfig"; path = "Target Support Files/Pods-JustNumber/Pods-JustNumber.debug.xcconfig"; sourceTree = "<group>"; };
+		EA730BD3BF2B76D23FD8E3F3 /* Pods-JustNumber.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JustNumber.release.xcconfig"; path = "Target Support Files/Pods-JustNumber/Pods-JustNumber.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,9 +169,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F72C116C2278451800F4E890 /* RxCocoa.framework in Frameworks */,
-				F72C116A2278451400F4E890 /* RxSwift.framework in Frameworks */,
-				205591EC1EF20E7100B53452 /* PhoneNumberKit.framework in Frameworks */,
+				0B6B2E1313F045A7D926B298 /* Pods_JustNumber.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,7 +192,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				20CD5DEB1EE94AC800AB48B4 /* Contacts.framework in Frameworks */,
-				20CD5DEF1EE950F500AB48B4 /* PhoneNumberKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -238,14 +229,10 @@
 		2085EA5E1ED40F950067D65D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F72C116B2278451800F4E890 /* RxCocoa.framework */,
-				F72C11692278451400F4E890 /* RxSwift.framework */,
-				205591EF1EF20E7800B53452 /* RealmSwift.framework */,
-				205591ED1EF20E7500B53452 /* Realm.framework */,
-				20CD5DEE1EE950F500AB48B4 /* PhoneNumberKit.framework */,
 				20CD5DEC1EE950D000AB48B4 /* iOS */,
 				20CD5DEA1EE94AC800AB48B4 /* Contacts.framework */,
 				2085EA5F1ED40F950067D65D /* CoreData.framework */,
+				443D16DF8E6073CA9BA78004 /* Pods_JustNumber.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -262,6 +249,7 @@
 				497F348424A06B4A00F306C4 /* action */,
 				20B12E901ED2CE2600521CD2 /* Products */,
 				2085EA5E1ED40F950067D65D /* Frameworks */,
+				F9646ACAD630396BC4E9B9B0 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -283,7 +271,6 @@
 			isa = PBXGroup;
 			children = (
 				20A4F0E71EE13B9F0021A4C2 /* JustNumber.entitlements */,
-				20556B8D1EEE2884001B82D3 /* JustNumber-Bridging-Header.h */,
 				20D9914C1EEA8F0D00698AC9 /* Info.plist */,
 				4900C2C8249C40CB00B65850 /* Data */,
 				4900C2C5249C3AA700B65850 /* Utils */,
@@ -417,6 +404,15 @@
 			path = action;
 			sourceTree = "<group>";
 		};
+		F9646ACAD630396BC4E9B9B0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4DB55DF2674FE0C7213CF5D4 /* Pods-JustNumber.debug.xcconfig */,
+				EA730BD3BF2B76D23FD8E3F3 /* Pods-JustNumber.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -458,11 +454,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 20B12EB71ED2CE2700521CD2 /* Build configuration list for PBXNativeTarget "JustNumber" */;
 			buildPhases = (
+				76B7C826C5E8720ED3979BB6 /* [CP] Check Pods Manifest.lock */,
 				20B12E8B1ED2CE2600521CD2 /* Sources */,
 				20B12E8C1ED2CE2600521CD2 /* Frameworks */,
 				20B12E8D1ED2CE2600521CD2 /* Resources */,
-				200D93F21EEA285400A65A24 /* ShellScript */,
 				20AE80601FBED73900F502D3 /* Embed App Extensions */,
+				C0DEAE0AE9937049030C8547 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -553,7 +550,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1220;
 				ORGANIZATIONNAME = evan;
 				TargetAttributes = {
 					20250D141EDBBFBA002CEF0C = {
@@ -604,7 +601,7 @@
 					};
 					20CD5DDB1EE9151F00AB48B4 = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = WB4K6375G3;
+						DevelopmentTeam = 86ZV3D5U7C;
 						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -706,25 +703,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		200D93F21EEA285400A65A24 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/PhoneNumberKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxRelay.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxBlocking.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Sync.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
 		20CD5DF01EE9512600AB48B4 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -738,6 +716,52 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		76B7C826C5E8720ED3979BB6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JustNumber-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C0DEAE0AE9937049030C8547 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JustNumber/Pods-JustNumber-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/PhoneNumberKit/PhoneNumberKit.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRelay/RxRelay.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PhoneNumberKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRelay.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JustNumber/Pods-JustNumber-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -939,7 +963,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = WB4K6375G3;
 				INFOPLIST_FILE = ShareLink/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.accommate.test.ShareLink;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -956,7 +980,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = WB4K6375G3;
 				INFOPLIST_FILE = ShareLink/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.accommate.test.ShareLink;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -970,6 +994,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -992,6 +1017,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1016,12 +1042,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1030,6 +1057,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -1052,6 +1080,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -1070,10 +1099,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1081,6 +1111,7 @@
 		};
 		20B12EB81ED2CE2700521CD2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DB55DF2674FE0C7213CF5D4 /* Pods-JustNumber.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				APP_NAME = "";
@@ -1100,7 +1131,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = kr.b1ink.justnumber1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "JustNumber/JustNumber-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1109,6 +1139,7 @@
 		};
 		20B12EB91ED2CE2700521CD2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA730BD3BF2B76D23FD8E3F3 /* Pods-JustNumber.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				APP_NAME = "";
@@ -1128,7 +1159,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = kr.b1ink.justnumber1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "JustNumber/JustNumber-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -1202,13 +1232,13 @@
 				CODE_SIGN_ENTITLEMENTS = share/share.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = WB4K6375G3;
+				DEVELOPMENT_TEAM = 86ZV3D5U7C;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = share/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.accommate.test.share;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1224,13 +1254,13 @@
 				CODE_SIGN_ENTITLEMENTS = share/share.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = WB4K6375G3;
+				DEVELOPMENT_TEAM = 86ZV3D5U7C;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = share/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.accommate.test.share;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -13,6 +13,7 @@ class MainViewController: UIViewController {
     static let MainSegue = "MainSegue"
     static let AddOrEditSegue = "AddOrEditSegue"
     static let DetailSegue = "DetailSegue"
+    static let EditSegue = "EditSegue"
     
     @IBOutlet weak var containerView: UIView!
     
@@ -21,8 +22,9 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
     }
-    
+ 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
